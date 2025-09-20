@@ -1,0 +1,627 @@
+
+        /* Tipografía 1: Montserrat desde Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        
+        /* Tipografía 2: Lora desde Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap');
+        
+        /* Tipografía 3: Inter desde Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+            --text-color: #2c3e50;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--light-color);
+            padding-top: 80px;
+        }
+
+        nav {
+            background: var(--primary-color);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: var(--accent-color);
+        }
+
+        .hamburguesa {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburguesa span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .demo-section {
+            background: var(--white);
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .demo-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .titulo-rem {
+            font-size: 2rem; 
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .subtitulo-em {
+            font-size: 1.5em;
+            font-family: 'Lora', serif;
+            color: var(--secondary-color);
+            margin-bottom: 0.8em; 
+        }
+        .texto-em {
+            font-size: 1.1em; /* 110% del tamaño base del contenedor */
+            line-height: 1.6em;
+            margin: 0.5em 0;
+        }
+
+        .unidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .unidad-ejemplo {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .unidad-ejemplo:hover {
+            transform: translateY(-5px);
+        }
+        .bloque-vh {
+            height: 30vh; /* 30% de la altura del viewport */
+            background: var(--gradient);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .bloque-vw {
+            width: 80vw; 
+            max-width: 400px; 
+            background: linear-gradient(45deg, var(--accent-color), var(--warning-color));
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .bloque-vmin {
+            background: var(--success-color);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .bloque-vmin h4 {
+            font-size: 4vmin; 
+        }
+
+
+        .bloque-vmax {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .bloque-vmax h4 {
+            font-size: 3vmax; 
+        }
+
+
+        .tipografia-bloque {
+            background: var(--white);
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .tipografia-bloque h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Tipografía 1: Montserrat 
+           clamp(mínimo, preferido, máximo) responsivo */
+        .montserrat-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.4rem); /* Se adapta automáticamente entre 1rem y 1.4rem */
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        /* Tipografía 2: Lora con tamaño fijo optimizado */
+        .lora-text {
+            font-family: 'Lora', serif;
+            font-size: 1.1rem; /* Tamaño fijo, optimizado para legibilidad */
+            font-weight: 400;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        /* Tipografía 3: Inter con calc() y vw + rem
+           Combinando unidades: tamaño base + escalado por viewport */
+        .inter-text {
+            font-family: 'Inter', sans-serif;
+            font-size: calc(1rem + 0.5vw); /* 1rem base + 0.5% del viewport width */
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .tipografia-info {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            background: var(--light-color);
+            padding: 0.8rem;
+            border-radius: 5px;
+            font-style: italic;
+            margin-top: 1rem;
+        }
+        .imagen-ejemplo {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--light-color);
+            border-radius: 10px;
+        }
+
+        .imagen-ejemplo h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .imagen-srcset {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin: 1rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .imagen-srcset:hover {
+            transform: scale(1.02);
+        }
+        .imagen-picture {
+            display: block;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .imagen-art-direction {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .imagen-art-direction:hover {
+            transform: scale(1.02);
+        }
+
+        .imagen-info {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            background: var(--white);
+            padding: 0.8rem;
+            border-radius: 5px;
+            font-style: italic;
+        }
+
+        .dispositivo-indicator {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .breakpoints-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .breakpoint-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .breakpoint-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .breakpoint-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .breakpoint-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .breakpoint-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--light-color);
+            color: var(--text-color);
+        }
+
+        .breakpoint-card li:last-child {
+            border-bottom: none;
+        }
+
+        .breakpoint-card li:before {
+            content: "✓";
+            color: var(--success-color);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+/*MEDIA QUERIES - ADAPTABILIDAD A DISPOSITIVOS*/
+
+        @media screen and (min-width: 1200px) {
+            .container {
+                padding: 2rem 3rem;
+            }
+            
+            .page-header h1 {
+                font-size: 3rem;
+            }
+            
+            .unidades-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+            
+            .breakpoints-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media screen and (min-width: 481px) and (max-width: 1024px) {
+            .hamburguesa {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--primary-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 2rem 0;
+                gap: 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .unidades-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .breakpoints-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .bloque-vh {
+                height: 25vh;
+            }
+
+            .bloque-vw {
+                width: 85vw;
+                max-width: 500px;
+            }
+            .montserrat-text {
+                font-size: clamp(1rem, 2.2vw, 1.3rem);
+            }
+
+            .inter-text {
+                font-size: calc(1rem + 0.4vw);
+            }
+
+            .bloque-vmin h4 {
+                font-size: 3.5vmin;
+            }
+
+            .bloque-vmax h4 {
+                font-size: 2.8vmax;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hamburguesa {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--primary-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 2rem 0;
+                gap: 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .page-header {
+                padding: 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+                text-align: left;
+            }
+
+            .demo-section {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
+
+            .demo-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .unidades-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .unidad-ejemplo {
+                padding: 1rem;
+            }
+
+            .titulo-rem {
+                font-size: 1.8rem; /* Menor tamaño en telefono */
+            }
+
+            .subtitulo-em {
+                font-size: 1.3em;
+            }
+
+            .texto-em {
+                font-size: 1em;
+            }
+
+            .bloque-vh {
+                height: 20vh; /* Menor altura en móvil */
+            }
+
+            .bloque-vw {
+                width: 95vw; /* Casi todo el ancho disponible */
+            }
+
+            /* Tipografías más pequeñas en telefono */
+            .montserrat-text {
+                font-size: clamp(0.9rem, 4vw, 1.2rem);
+            }
+
+            .lora-text {
+                font-size: 1rem;
+            }
+
+            .inter-text {
+                font-size: calc(0.9rem + 0.3vw);
+            }
+
+            .tipografia-bloque {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
+
+            /* Breakpoints grid para 1 columna */
+            .breakpoints-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .breakpoint-card {
+                padding: 1.5rem;
+            }
+
+            .imagen-ejemplo {
+                padding: 1.5rem;
+            }
+            .bloque-vmin h4 {
+                font-size: 5vmin;
+            }
+
+            .bloque-vmax h4 {
+                font-size: 4vmax;
+            }
+        }

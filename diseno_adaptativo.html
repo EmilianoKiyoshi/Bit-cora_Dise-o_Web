@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Adaptativo - Bitacora Web</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Lora:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="css/diseno_adaptativo.css">
+</head>
+
+<body>
+    <!-- Navegacion -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Mi Bitacora</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="dom.html" class="nav-link">Manipulación DOM</a></li>
+                <li><a href="media_queries.html" class="nav-link">Media Queries</a></li>
+                <li><a href="#" class="nav-link active">Diseño Adaptativo</a></li>
+            </ul>
+            <div class="hamburguesa">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <!-- Encabezado con titulo -->
+        <header class="page-header">
+            <h1>Diseño Adaptativo: Tipografia e Imagenes Responsivas</h1>
+            <p>
+                En esta pagina muestro como se usan unidades relativas, tipografia responsiva e imagenes adaptativas
+                para mejorar la experiencia del usuario en diferentes dispositivos. Aplicando conceptos modernos de
+                CSS para crear diseños verdaderamente adaptativos.
+            </p>
+        </header>
+
+        <!-- Seccion de Unidades de Medida -->
+        <section class="demo-section">
+            <h2>Unidades de Medida CSS</h2>
+            <p>Demostracion practica de diferentes unidades de medida y sus casos de uso especificos:</p>
+
+            <div class="unidades-grid">
+                <!-- Ejemplo REM 1-->
+                <div class="unidad-ejemplo">
+                    <h3 class="titulo-rem">Titulo usando REM</h3>
+                    <p>Este titulo usa <strong>2rem</strong>. Las unidades <code>rem</code> son relativas al elemento
+                        raiz (html),
+                        lo que las hace predecibles y escalables. Si el root font-size es 16px, este titulo sera 32px.
+                        Ideal para titulos porque escalan uniformemente.</p>
+                    <small><strong>Uso:</strong> Titulos, elementos que necesitan escalado consistente</small>
+                </div>
+
+                <!-- Ejemplo EM 2-->
+                <div class="unidad-ejemplo">
+                    <h4 class="subtitulo-em">Subtitulo usando EM</h4>
+                    <p class="texto-em">Este texto usa <strong>1.1em</strong>. Las unidades <code>em</code> son
+                        relativas
+                        al elemento padre, por lo que escalan proporcionalmente. Si el padre es 16px, este texto sera
+                        17.6px.</p>
+                    <small><strong>Uso:</strong> Texto que debe escalar con su contexto, componentes anidados</small>
+                </div>
+
+                <!-- Ejemplo VH 3-->
+                <div class="unidad-ejemplo">
+                    <div class="bloque-vh">
+                        <h4>Bloque con altura VH</h4>
+                        <p>Este contenedor usa <strong>30vh</strong> (30% del viewport height).
+                            Las unidades <code>vh</code> son ideales para secciones que deben ocupar
+                            una porcion especifica de la pantalla visible.</p>
+                    </div>
+                    <small><strong>Uso:</strong> Heroes, secciones de pantalla completa, elementos que dependen de la
+                        altura</small>
+                </div>
+
+                <!-- Ejemplo VW 4-->
+                <div class="unidad-ejemplo">
+                    <div class="bloque-vw">
+                        <h4>Elemento con ancho VW</h4>
+                        <p>Este elemento usa <strong>80vw</strong> (80% del viewport width).
+                            Se adapta automaticamente al ancho de pantalla disponible.</p>
+                    </div>
+                    <small><strong>Uso:</strong> Elementos fluidos, contenedores que deben adaptarse al ancho</small>
+                </div>
+
+                <!-- Ejemplo VMIN 5-->
+                <div class="unidad-ejemplo">
+                    <div class="bloque-vmin">
+                        <h4>Texto VMIN</h4>
+                        <p>Font-size de <strong>4vmin</strong>. Se basa en la dimension mas pequeña del viewport
+                            (ancho o alto), garantizando legibilidad en cualquier orientacion.</p>
+                    </div>
+                    <small><strong>Uso:</strong> Texto que debe mantenerse legible en cualquier orientacion</small>
+                </div>
+
+                <!-- Ejemplo VMAX 6-->
+                <div class="unidad-ejemplo">
+                    <div class="bloque-vmax">
+                        <h4>Texto VMAX</h4>
+                        <p>Font-size de <strong>3vmax</strong>. Se basa en la dimension mas grande del viewport,
+                            util para elementos decorativos que deben ser prominentes.</p>
+                    </div>
+                    <small><strong>Uso:</strong> Elementos decorativos, titulos de impacto visual</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion de Tipografia Personalizada y Responsiva -->
+        <section class="demo-section">
+            <h2>Tipografias Personalizadas y Responsivas (3 bloques)</h2>
+
+            <!-- Bloque 1: Montserrat con clamp() -->
+            <div class="tipografia-bloque">
+                <h3>Tipografia: Montserrat (Google Fonts)</h3>
+                <p class="montserrat-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus
+                    error sit voluptatem accusantium doloremque laudantium.
+                </p>
+                <div class="tipografia-info">
+                    <strong>Tecnica responsiva:</strong> <code>font-size: clamp(1rem, 2.5vw, 1.4rem)</code><br>
+                    <strong>Fuente:</strong> Google Fonts<br>
+                    <strong>Caracteristicas:</strong> Sans-serif moderna, excelente legibilidad en dispositivos
+                    digitales.
+                    El tamaño se adapta automaticamente entre 1rem (minimo) y 1.4rem (maximo), escalando con 2.5vw.
+                </div>
+            </div>
+
+            <!-- Bloque 2: Lora con tamaño fijo -->
+            <div class="tipografia-bloque">
+                <h3>Tipografia: Lora (Google Fonts)</h3>
+                <p class="lora-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim, lectus quis tincidunt
+                    cursus, nulla mauris vehicula ipsum, eu tincidunt libero nunc eu nulla. Vestibulum ante ipsum
+                    primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi
+                    tristique senectus et netus et malesuada fames ac turpis egestas. Sed consectetur, nunc vel
+                    cursus bibendum, ex nunc tincidunt nulla, eu maximus nulla nunc eu nulla. Praesent congue erat
+                    at massa. Sed cursus turpis a purus aliquam cursus.
+                </p>
+                <div class="tipografia-info">
+                    <strong>Tecnica responsiva:</strong> <code>font-size: 1.1rem</code> (tamaño fijo)<br>
+                    <strong>Fuente:</strong> Google Fonts<br>
+                    <strong>Caracteristicas:</strong> Serif elegante, optimizada para lectura prolongada.
+                    Tamaño fijo para mantener la legibilidad optima en textos largos.
+                </div>
+            </div>
+
+            <!-- Bloque 3: Inter con calc() -->
+            <div class="tipografia-bloque">
+                <h3>Tipografia: Inter (Google Fonts)</h3>
+                <p class="inter-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent congue erat at massa. Sed cursus
+                    turpis a purus aliquam cursus. Sed non dui sodales augue lacus, sit amet falutpat lorem. Aliquam
+                    lobortis. Maecenas vestibulum mollis diam. Pellentesque ut neque. Pellentesque habitant morbi
+                    tristique senectus et netus et malesuada fames ac turpis egestas. In dui magna, posuere eget,
+                    vestibulum et, tempor auctor, justo. In ac felis quis tortor malesuada pretium.
+                </p>
+                <div class="tipografia-info">
+                    <strong>Tecnica responsiva:</strong> <code>font-size: calc(1rem + 0.5vw)</code><br>
+                    <strong>Fuente:</strong> Google Fonts<br>
+                    <strong>Caracteristicas:</strong> Sans-serif tecnica, optimizada para interfaces digitales.
+                    Combina tamaño base (1rem) con escalado por viewport (0.5vw) para adaptabilidad suave.
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion de Imagenes Responsivas -->
+        <section class="demo-section">
+            <h2>Imagenes Responsivas</h2>
+
+            <!-- Ejemplo 1: srcset y sizes -->
+            <div class="imagen-ejemplo">
+                <h3>Ejemplo 1: Imagen con srcset y sizes</h3>
+                <p>Esta imagen cambia automaticamente de resolucion segun el ancho de pantalla:</p>
+
+                <img src="https://picsum.photos/400/300?random=1" srcset="https://picsum.photos/400/300?random=1 400w,
+                             https://picsum.photos/800/600?random=1 800w,
+                             https://picsum.photos/1200/900?random=1 1200w" sizes="(max-width: 480px) 100vw,
+                            (max-width: 1024px) 80vw,
+                            60vw" alt="Imagen responsiva con diferentes resoluciones" class="imagen-srcset">
+
+                <div class="imagen-info">
+                    <strong>Tecnica:</strong> srcset con descriptores de ancho (w) y atributo sizes<br>
+                    <strong>Funcionamiento:</strong>
+                    <ul style="margin: 0.5rem 0; padding-left: 1rem;">
+                        <li>400w para moviles (≤480px) - imagen pequeña</li>
+                        <li>800w para tablets (≤1024px) - imagen media</li>
+                        <li>1200w para desktop (>1024px) - imagen grande</li>
+                    </ul>
+                    <strong>Beneficio:</strong> Optimiza la carga segun el dispositivo, ahorrando ancho de banda.
+                </div>
+            </div>
+
+            <!-- Ejemplo 2: Picture con direction art -->
+            <div class="imagen-ejemplo">
+                <h3>Ejemplo 2: Direccion de Arte con &lt;picture&gt;</h3>
+                <p>Esta imagen cambia de composicion segun el dispositivo (direccion de arte):</p>
+
+                <picture class="imagen-picture">
+                    <!-- Movil: imagen vertical -->
+                    <source media="(max-width: 480px)" srcset="https://picsum.photos/300/400?random=2">
+
+                    <!-- Tablet: imagen cuadrada -->
+                    <source media="(max-width: 1024px)" srcset="https://picsum.photos/500/500?random=2">
+
+                    <!-- Desktop: imagen horizontal -->
+                    <img src="https://picsum.photos/800/400?random=2" alt="Imagen con direccion de arte responsiva"
+                        class="imagen-art-direction">
+                </picture>
+
+                <div class="imagen-info">
+                    <strong>Tecnica:</strong> Elemento &lt;picture&gt; con diferentes composiciones<br>
+                    <strong>Funcionamiento:</strong>
+                    <ul style="margin: 0.5rem 0; padding-left: 1rem;">
+                        <li>Movil: 300×400px (vertical) - mejor para pantallas estrechas</li>
+                        <li>Tablet: 500×500px (cuadrada) - equilibrada para tablets</li>
+                        <li>Desktop: 800×400px (horizontal) - aprovecha pantallas anchas</li>
+                    </ul>
+                    <strong>Beneficio:</strong> Cada dispositivo recibe la composicion mas adecuada.
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion de Adaptabilidad a Dispositivos -->
+        <section class="demo-section">
+            <h2>Adaptabilidad a Dispositivos (Media Queries)</h2>
+            <p>Esta pagina implementa 3 breakpoints principales que se adaptan automaticamente:</p>
+
+            <div class="dispositivo-indicator" id="dispositivo-actual">
+                Detectando dispositivo...
+            </div>
+
+            <div class="breakpoints-grid">
+                <div class="breakpoint-card">
+                    <h4>📱 Movil (maximo 480px)</h4>
+                    <ul>
+                        <li>Grid de unidades: 1 columna</li>
+                        <li>Navegacion: menu hamburguesa</li>
+                        <li>VH reducido: 20vh para mejor UX</li>
+                        <li>VW expandido: 95vw (uso completo)</li>
+                        <li>Tipografias optimizadas para lectura movil</li>
+                        <li>VMIN: 5vmin, VMAX: 4vmax</li>
+                        <li>Imagenes: 100% ancho disponible</li>
+                    </ul>
+                </div>
+
+                <div class="breakpoint-card">
+                    <h4>📲 Tablet (481px a 1024px)</h4>
+                    <ul>
+                        <li>Grid de unidades: 2 columnas</li>
+                        <li>Navegacion: menu hamburguesa</li>
+                        <li>VH balanceado: 25vh</li>
+                        <li>VW controlado: 85vw (max 500px)</li>
+                        <li>Tipografias balanceadas</li>
+                        <li>VMIN: 3.5vmin, VMAX: 2.8vmax</li>
+                        <li>Layout hibrido movil-desktop</li>
+                    </ul>
+                </div>
+
+                <div class="breakpoint-card">
+                    <h4>💻 Desktop (mas de 1024px)</h4>
+                    <ul>
+                        <li>Grid de unidades: 3 columnas</li>
+                        <li>Navegacion: menu horizontal completo</li>
+                        <li>VH aprovechado: 30vh</li>
+                        <li>VW limitado: 80vw (max 400px)</li>
+                        <li>Tipografias optimizadas para lectura</li>
+                        <li>VMIN: 4vmin, VMAX: 3vmax</li>
+                        <li>Efectos hover avanzados</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background: var(--light-color); padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">💡 Puntos Clave del Diseño Responsivo</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <div style="background: var(--white); padding: 1rem; border-radius: 8px;">
+                        <h4 style="color: var(--secondary-color);">🎯 Mobile First</h4>
+                        <p style="font-size: 0.9rem;">Diseño base para moviles, luego se escala hacia arriba.</p>
+                    </div>
+                    <div style="background: var(--white); padding: 1rem; border-radius: 8px;">
+                        <h4 style="color: var(--secondary-color);">📏 Unidades Flexibles</h4>
+                        <p style="font-size: 0.9rem;">rem, em, vw, vh se adaptan mejor que px fijos.</p>
+                    </div>
+                    <div style="background: var(--white); padding: 1rem; border-radius: 8px;">
+                        <h4 style="color: var(--secondary-color);">🖼️ Imagenes Inteligentes</h4>
+                        <p style="font-size: 0.9rem;">srcset y picture optimizan carga y composicion.</p>
+                    </div>
+                    <div style="background: var(--white); padding: 1rem; border-radius: 8px;">
+                        <h4 style="color: var(--secondary-color);">🔤 Tipografia Fluida</h4>
+                        <p style="font-size: 0.9rem;">clamp() y calc() crean escalado automatico.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="demo-section">
+            <h2>Ejemplos de Codigo Implementado</h2>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                <div style="background: var(--dark-color); color: var(--white); padding: 1.5rem; border-radius: 10px;">
+                    <h4 style="color: var(--warning-color); margin-bottom: 1rem;">Unidades Responsivas</h4>
+                    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 5px; overflow-x: auto; font-size: 0.8rem;"><code>/* REM - relativo al root */
+.titulo-rem { font-size: 2rem; }
+
+/* EM - relativo al padre */
+.subtitulo-em { font-size: 1.5em; }
+
+/* VH - porcentaje de altura */
+.bloque-vh { height: 30vh; }
+
+/* VW - porcentaje de ancho */
+.bloque-vw { width: 80vw; }</code></pre>
+                </div>
+
+                <div style="background: var(--dark-color); color: var(--white); padding: 1.5rem; border-radius: 10px;">
+                    <h4 style="color: var(--warning-color); margin-bottom: 1rem;">Tipografia Responsiva</h4>
+                    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 5px; overflow-x: auto; font-size: 0.8rem;"><code>/* clamp() - automatico */
+font-size: clamp(1rem, 2.5vw, 1.4rem);
+
+/* calc() - combinado */
+font-size: calc(1rem + 0.5vw);
+
+/* Media queries condicionales */
+@media (max-width: 480px) {
+  font-size: 0.9rem;
+}</code></pre>
+                </div>
+
+                <div style="background: var(--dark-color); color: var(--white); padding: 1.5rem; border-radius: 10px;">
+                    <h4 style="color: var(--warning-color); margin-bottom: 1rem;">Imagenes Responsivas</h4>
+                    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 5px; overflow-x: auto; font-size: 0.8rem;"><code>&lt;img srcset="
+  image-400.jpg 400w,1
+  image-800.jpg 800w,
+  image-1200.jpg 1200w"
+  sizes="(max-width: 480px) 100vw,
+         (max-width: 1024px) 80vw,
+         60vw" /&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="js/diseno_adaptativo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación del DOM - Bitácora Web</title>
+    <link rel="stylesheet" href="css/dom_style.css">
+</head>
+<body>
+    <!-- Navegacion -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Mi Bitácora</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="#" class="nav-link active">Manipulación DOM</a></li>
+                <li><a href="media_queries.html" class="nav-link">Media Queries</a></li>
+                <li><a href="diseno_adaptativo.html" class="nav-link">Diseño Adaptativo</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <header class="page-header">
+            <h1>Manipulación del DOM</h1>
+            <p>Demostración interactiva de manipulación de elementos del DOM usando JavaScript</p>
+        </header>
+
+        <!-- Contador Dinamico -->
+        <section class="demo-section">
+            <h2>Contador Dinámico</h2>
+            <div class="contador-display">
+                <div class="contador-numero" id="contador">0</div>
+                <button class="btn success" onclick="incrementar()">Incrementar</button>
+                <button class="btn warning" onclick="decrementar()">Decrementar</button>
+                <button class="btn danger" onclick="resetear()">Resetear</button>
+            </div>
+        </section>
+
+        <!-- Lista de Tareas -->
+        <section class="demo-section">
+            <h2>Lista de Tareas Dinámica</h2>
+            <div class="form-group">
+                <input type="text" id="nueva-tarea" placeholder="Escribe una nueva tarea...">
+                <button class="btn" onclick="agregarTarea()">Agregar Tarea</button>
+            </div>
+            <ul id="lista-tareas"></ul>
+        </section>
+
+        <!-- Cambiar Colores -->
+        <section class="demo-section">
+            <h2>Cambio Dinámico de Colores</h2>
+            <p>Haz clic en cualquier color para cambiar el fondo de la página</p>
+            <div class="color-grid">
+                <div class="color-box" style="background: #e74c3c;" onclick="cambiarFondo('#e74c3c')">Rojo</div>
+                <div class="color-box" style="background: #3498db;" onclick="cambiarFondo('#3498db')">Azul</div>
+                <div class="color-box" style="background: #2ecc71;" onclick="cambiarFondo('#2ecc71')">Verde</div>
+                <div class="color-box" style="background: #f39c12;" onclick="cambiarFondo('#f39c12')">Naranja</div>
+                <div class="color-box" style="background: #9b59b6;" onclick="cambiarFondo('#9b59b6')">Morado</div>
+                <div class="color-box" style="background: #34495e;" onclick="cambiarFondo('#34495e')">Gris</div>
+            </div>
+            <button class="btn" onclick="restaurarFondo()">Restaurar Fondo Original</button>
+        </section>
+
+        <!-- Formulario Dinamico -->
+        <section class="demo-section">
+            <h2>Formulario Interactivo</h2>
+            <form id="formulario-dinamico">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" min="1" max="120">
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+                </div>
+                <button type="button" class="btn" onclick="procesarFormulario()">Procesar Datos</button>
+                <button type="button" class="btn warning" onclick="limpiarFormulario()">Limpiar</button>
+            </form>
+            <div id="resultado-formulario" style="margin-top: 1rem; padding: 1rem; background: var(--light-color); border-radius: 5px; display: none;"></div>
+        </section>
+
+        <!-- Galería Dinamica -->
+        <section class="demo-section">
+            <h2>Galería de Elementos</h2>
+            <button class="btn" onclick="agregarImagen()">Agregar Elemento</button>
+            <button class="btn danger" onclick="eliminarUltimaImagen()">Eliminar Último</button>
+            <button class="btn warning" onclick="limpiarGaleria()">Limpiar Todo</button>
+            <div class="galeria" id="galeria"></div>
+        </section>
+
+        <!-- Control de Slider -->
+        <section class="demo-section">
+            <h2>Control de Opacidad</h2>
+            <div class="slider-container">
+                <label for="opacidad-slider">Opacidad del contenido:</label>
+                <input type="range" id="opacidad-slider" class="slider" min="10" max="100" value="100" oninput="cambiarOpacidad(this.value)">
+                <span id="valor-opacidad">100%</span>
+            </div>
+        </section>
+
+        <!-- Texto Dinamico -->
+        <section class="demo-section">
+            <h2>Manipulación de Texto</h2>
+            <div class="form-group">
+                <input type="text" id="texto-input" placeholder="Escribe algo aquí..." oninput="actualizarTexto()">
+            </div>
+            <div style="margin: 1rem 0;">
+                <button class="btn" onclick="cambiarEstilo('mayuscula')">MAYÚSCULAS</button>
+                <button class="btn" onclick="cambiarEstilo('minuscula')">minúsculas</button>
+                <button class="btn" onclick="cambiarEstilo('capitalize')">Capitalizar</button>
+                <button class="btn" onclick="cambiarEstilo('reverse')">Invertir</button>
+            </div>
+            <div id="texto-resultado" style="padding: 1rem; background: var(--light-color); border-radius: 5px; font-size: 1.2rem; min-height: 50px; display: flex; align-items: center;">
+                Tu texto aparecerá aquí...
+            </div>
+        </section>
+
+        <!-- Elementos Ocultos y visibles -->
+        <section class="demo-section">
+            <h2>Control de Visibilidad</h2>
+            <div style="margin: 1rem 0;">
+                <button class="btn" onclick="toggleElemento('elemento1')">Toggle Elemento 1</button>
+                <button class="btn" onclick="toggleElemento('elemento2')">Toggle Elemento 2</button>
+                <button class="btn" onclick="toggleElemento('elemento3')">Toggle Elemento 3</button>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
+                <div id="elemento1" class="demo-element" style="background: #e74c3c; padding: 2rem; border-radius: 10px; color: white; text-align: center;">
+                    Elemento 1
+                </div>
+                <div id="elemento2" class="demo-element" style="background: #3498db; padding: 2rem; border-radius: 10px; color: white; text-align: center;">
+                    Elemento 2
+                </div>
+                <div id="elemento3" class="demo-element" style="background: #2ecc71; padding: 2rem; border-radius: 10px; color: white; text-align: center;">
+                    Elemento 3
+                </div>
+            </div>
+        </section>
+    </div>
+        <footer>
+        <p>&copy; 2025 Bitacora Web. Emiliano Rivero Meraz</p>
+    </footer>
+    <script src="js/dom_script.js"></script>
+</body>
+</html>

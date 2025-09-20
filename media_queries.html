@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/media_queries_style.css">
+    <title>Media Queries - Bitácora Web</title>
+
+</head>
+
+<body>
+    <!-- Indicador de dispositivo -->
+    <div class="device-indicator"></div>
+
+    <!-- Navegacion -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Mi Bitácora</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="dom.html" class="nav-link">Manipulación DOM</a></li>
+                <li><a href="#" class="nav-link active">Media Queries</a></li>
+                <li><a href="diseno_adaptativo.html" class="nav-link">Diseño Adaptativo</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <header class="page-header">
+            <h1>Diseño Responsivo con Media Queries</h1>
+            <p>Demostración de diferentes técnicas de diseño adaptativo para múltiples dispositivos</p>
+        </header>
+
+        <!-- Explicación de Media Queries -->
+        <section class="demo-section">
+            <h2>¿Qué son las Media Queries?</h2>
+            <p>Las Media Queries son una característica de CSS3 que permite aplicar estilos específicos según las
+                características del dispositivo, como el ancho de pantalla, la orientación, la resolución, etc. Son
+                fundamentales para crear diseños responsivos.</p>
+            <div
+                style="background: var(--light-color); padding: 1.5rem; border-radius: 10px; margin: 1rem 0; font-family: monospace;">
+                <strong>Ejemplo básico:</strong><br>
+                @media screen and (max-width: 768px) {<br>
+                &nbsp;&nbsp;/* Estilos para pantallas menores a 768px */<br>
+                }
+            </div>
+        </section>
+
+        <!-- Grid Responsivo -->
+        <section class="demo-section">
+            <h2>Grid Responsivo</h2>
+            <p>Este grid se adapta automáticamente: 4 columnas en desktop, 2 en tablet y 1 en mobile</p>
+            <div class="responsive-grid">
+                <div class="grid-item">Objeto 1</div>
+                <div class="grid-item">Objeto 2</div>
+                <div class="grid-item">Objeto 3</div>
+                <div class="grid-item">Objeto 4</div>
+                <div class="grid-item">Objeto 5</div>
+                <div class="grid-item">Objeto 6</div>
+                <div class="grid-item">Objeto 7</div>
+                <div class="grid-item">Objeto 8</div>
+            </div>
+        </section>
+
+        <!-- Navegacionm Secundaria -->
+        <section class="demo-section">
+            <h2>Navegación Adaptativa</h2>
+            <p>La navegación cambia de horizontal a vertical en dispositivos pequeños</p>
+            <nav class="secondary-nav">
+                <a href="#" class="secondary-nav-item">Inicio</a>
+                <a href="#" class="secondary-nav-item">Servicios</a>
+                <a href="#" class="secondary-nav-item">Portfolio</a>
+                <a href="#" class="secondary-nav-item">Contacto</a>
+                <a href="#" class="secondary-nav-item">Blog</a>
+            </nav>
+        </section>
+
+        <!-- Cards Responsivas -->
+        <section class="demo-section">
+            <h2>Tarjetas Responsivas</h2>
+            <p>Las tarjetas se reorganizan según el tamaño de pantalla: 3 columnas → 2 columnas → 1 columna</p>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-header">🎨</div>
+                    <div class="card-content">
+                        <h3>Diseño</h3>
+                        <p>Creamos diseños modernos y atractivos que se adaptan a cualquier dispositivo.</p>
+                        <a href="#" class="card-button">Ver más</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">💻</div>
+                    <div class="card-content">
+                        <h3>Desarrollo</h3>
+                        <p>Desarrollamos sitios web responsivos usando las últimas tecnologías.</p>
+                        <a href="#" class="card-button">Ver más</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">📱</div>
+                    <div class="card-content">
+                        <h3>Mobile First</h3>
+                        <p>Diseñamos pensando primero en dispositivos móviles para mejor experiencia.</p>
+                        <a href="#" class="card-button">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layout con Sidebar -->
+        <section class="demo-section">
+            <h2>Layout con Sidebar</h2>
+            <p>En dispositivos pequeños, el sidebar se mueve debajo del contenido principal</p>
+            <div class="layout-with-sidebar">
+                <aside class="sidebar">
+                    <h3>Menu Lateral</h3>
+                    <ul>
+                        <li>📊 Dashboard</li>
+                        <li>👥 Usuarios</li>
+                        <li>📝 Contenido</li>
+                        <li>⚙️ Configuración</li>
+                        <li>📈 Analíticas</li>
+                        <li>💬 Mensajes</li>
+                    </ul>
+                </aside>
+                <main class="main-content">
+                    <h3>Contenido Principal</h3>
+                    <p>Este es el área principal de contenido. En pantallas grandes aparece junto al sidebar, pero en
+                        dispositivos móviles el sidebar se coloca debajo para una mejor experiencia de usuario.</p>
+                    <p>El diseño responsivo nos permite reorganizar los elementos de manera inteligente según el espacio
+                        disponible, priorizando siempre la usabilidad y la experiencia del usuario.</p>
+                    <p>Las Media Queries nos dan el control total sobre cómo se ve nuestro sitio en diferentes
+                        dispositivos, desde teléfonos pequeños hasta pantallas de escritorio grandes.</p>
+                </main>
+            </div>
+        </section>
+
+        <!-- Galeria de Imágenes -->
+        <section class="demo-section">
+            <h2>Galería Adaptativa</h2>
+            <p>La galería ajusta automáticamente el número de columnas según el espacio disponible</p>
+            <div class="image-gallery">
+                <div class="gallery-item">1</div>
+                <div class="gallery-item">2</div>
+                <div class="gallery-item">3</div>
+                <div class="gallery-item">4</div>
+                <div class="gallery-item">5</div>
+                <div class="gallery-item">6</div>
+                <div class="gallery-item">7</div>
+                <div class="gallery-item">8</div>
+                <div class="gallery-item">9</div>
+            </div>
+        </section>
+
+        <!-- Breakpoints Utilizados -->
+        <section class="demo-section">
+            <h2>Breakpoints Utilizados</h2>
+            <p>Estos son los puntos de quiebre implementados en esta página:</p>
+            <div style="display: grid; gap: 1rem; margin: 2rem 0;">
+                <div
+                    style="background: var(--light-color); padding: 1rem; border-radius: 5px; border-left: 4px solid var(--success-color);">
+                    <strong>Desktop Grande:</strong> 1200px+
+                    <br><span style="font-size: 0.9rem; color: var(--dark-color);">Grid de 4 columnas, sidebar completo,
+                        navegación horizontal</span>
+                </div>
+                <div
+                    style="background: var(--light-color); padding: 1rem; border-radius: 5px; border-left: 4px solid var(--secondary-color);">
+                    <strong>Desktop:</strong> 992px - 1199px
+                    <br><span style="font-size: 0.9rem; color: var(--dark-color);">Grid de 3 columnas, layout
+                        optimizado</span>
+                </div>
+                <div
+                    style="background: var(--light-color); padding: 1rem; border-radius: 5px; border-left: 4px solid var(--warning-color);">
+                    <strong>Tablet:</strong> 768px - 991px
+                    <br><span style="font-size: 0.9rem; color: var(--dark-color);">Grid de 2 columnas, menú hamburguesa,
+                        sidebar reducido</span>
+                </div>
+                <div
+                    style="background: var(--light-color); padding: 1rem; border-radius: 5px; border-left: 4px solid var(--accent-color);">
+                    <strong>Mobile:</strong> hasta 767px
+                    <br><span style="font-size: 0.9rem; color: var(--dark-color);">Grid de 1 columna, sidebar debajo,
+                        navegación vertical</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Mejores Prácticas</h2>
+            <div style="display: grid; gap: 1.5rem; margin: 2rem 0;">
+                <div style="background: var(--white); padding: 1.5rem; border-radius: 10px; border: 1px solid #e0e0e0;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📱 Mobile First</h4>
+                    <p>Diseña primero para dispositivos móviles y luego escala hacia arriba.</p>
+                </div>
+                <div style="background: var(--white); padding: 1.5rem; border-radius: 10px; border: 1px solid #e0e0e0;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🎯 Puntos de Quiebre Lógicos</h4>
+                    <p>Usa breakpoints basados en el contenido, no solo en dispositivos específicos.</p>
+                </div>
+                <div style="background: var(--white); padding: 1.5rem; border-radius: 10px; border: 1px solid #e0e0e0;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">⚡ Performance</h4>
+                    <p>Evita cargar recursos innecesarios en dispositivos pequeños.</p>
+                </div>
+                <div style="background: var(--white); padding: 1.5rem; border-radius: 10px; border: 1px solid #e0e0e0;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🧪 Prueba en Dispositivos Reales
+                    </h4>
+                    <p>Las herramientas de desarrollo son útiles, pero prueba en dispositivos reales.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Características Adicionales -->
+        <section class="demo-section">
+            <h2>Características Implementadas</h2>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                <div
+                    style="background: linear-gradient(45deg, #3498db, #2980b9); color: white; padding: 1.5rem; border-radius: 10px;">
+                    <h4>Flexbox & Grid</h4>
+                    <p>Combinación de ambas tecnologías para layouts flexibles y robustos.</p>
+                </div>
+                <div
+                    style="background: linear-gradient(45deg, #e74c3c, #c0392b); color: white; padding: 1.5rem; border-radius: 10px;">
+                    <h4>Unidades Relativas</h4>
+                    <p>Uso de rem, em, %, vw, vh para escalabilidad.</p>
+                </div>
+                <div
+                    style="background: linear-gradient(45deg, #27ae60, #229954); color: white; padding: 1.5rem; border-radius: 10px;">
+                    <h4>Variables CSS</h4>
+                    <p>Paleta de colores consistente mediante custom properties.</p>
+                </div>
+                <div
+                    style="background: linear-gradient(45deg, #f39c12, #d68910); color: white; padding: 1.5rem; border-radius: 10px;">
+                    <h4>Animaciones</h4>
+                    <p>Transiciones suaves que mejoran la experiencia de usuario.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/media_queries_script.js"></script>
+</body>
+
+</html>
