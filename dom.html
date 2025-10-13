@@ -1,159 +1,205 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manipulación del DOM - Bitácora Web</title>
     <link rel="stylesheet" href="css/dom_style.css">
 </head>
+
 <body>
-    <!-- Navegacion -->
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Mi Bitácora</a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Inicio</a></li>
-                <li><a href="#" class="nav-link active">Manipulación DOM</a></li>
-                <li><a href="media_queries.html" class="nav-link">Media Queries</a></li>
-                <li><a href="diseno_adaptativo.html" class="nav-link">Diseño Adaptativo</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+    <div class="page-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1>Mi Bitácora</h1>
+                <p>Diseño Web HTML 5 y CSS <br> Emiliano Rivero Meraz </p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
+                        </svg> Inicio</span>
+                </a>
+                <a href="dom.html" class="nav-link active">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-diagram-3-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zm-6 8A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm6 0A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5z" />
+                        </svg> Manipulación DOM</span>
+                </a>
+                <a href="media_queries.html" class="nav-link ">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-bandaid-fill" viewBox="0 0 16 16">
+                            <path
+                                d="m2.68 7.676 6.49-6.504a4 4 0 0 1 5.66 5.653l-1.477 1.529-5.006 5.006-1.523 1.472a4 4 0 0 1-5.653-5.66l.001-.002 1.505-1.492.001-.002Zm5.71-2.858a.5.5 0 1 0-.708.707.5.5 0 0 0 .707-.707ZM6.974 6.939a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707M5.56 8.354a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708m2.828 2.828a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707m1.414-2.121a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707m1.414-.707a.5.5 0 1 0-.706-.708.5.5 0 0 0 .707.708Zm-4.242.707a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707m1.414-.707a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708m1.414-2.122a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707M8.646 3.354l4 4 .708-.708-4-4zm-1.292 9.292-4-4-.708.708 4 4z" />
+                        </svg> Media Queries</span>
+                </a>
+                <a href="diseno_adaptativo.html" class="nav-link">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-phone-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0" />
+                        </svg> Diseño Adaptativo</span>
+                </a>
+                <a href="animaciones_flexbox.html" class="nav-link">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-rocket-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M10.175 1.991c.81 1.312 1.583 3.43 1.778 6.819l1.5 1.83A2.5 2.5 0 0 1 14 12.202V15.5a.5.5 0 0 1-.9.3l-1.125-1.5c-.166-.222-.42-.4-.752-.57-.214-.108-.414-.192-.627-.282l-.196-.083C9.7 13.793 8.85 14 8 14s-1.7-.207-2.4-.635q-.101.044-.198.084c-.211.089-.411.173-.625.281-.332.17-.586.348-.752.57L2.9 15.8a.5.5 0 0 1-.9-.3v-3.298a2.5 2.5 0 0 1 .548-1.562l.004-.005L4.049 8.81c.197-3.323.969-5.434 1.774-6.756.466-.767.94-1.262 1.31-1.57a3.7 3.7 0 0 1 .601-.41A.55.55 0 0 1 8 0c.101 0 .17.027.25.064q.056.025.145.075c.118.066.277.167.463.315.373.297.85.779 1.317 1.537M9.5 6c0-1.105-.672-2-1.5-2s-1.5.895-1.5 2S7.172 8 8 8s1.5-.895 1.5-2" />
+                            <path
+                                d="M8 14.5c.5 0 .999-.046 1.479-.139L8.4 15.8a.5.5 0 0 1-.8 0l-1.079-1.439c.48.093.98.139 1.479.139" />
+                        </svg> Motion y Flexbox</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <div class="main-content">
+            <div class="container">
+                <header class="page-header">
+                    <h1>Manipulación del DOM</h1>
+                    <p>Demostración interactiva de manipulación de elementos del DOM usando JavaScript</p>
+                </header>
+
+                <!-- Contador Dinamico -->
+                <section class="demo-section">
+                    <h2>Contador Dinámico</h2>
+                    <div class="contador-display">
+                        <div class="contador-numero" id="contador">0</div>
+                        <button class="btn success" onclick="incrementar()">Incrementar</button>
+                        <button class="btn warning" onclick="decrementar()">Decrementar</button>
+                        <button class="btn danger" onclick="resetear()">Resetear</button>
+                    </div>
+                </section>
+
+                <!-- Lista de Tareas -->
+                <section class="demo-section">
+                    <h2>Lista de Tareas Dinámica</h2>
+                    <div class="form-group">
+                        <input type="text" id="nueva-tarea" placeholder="Escribe una nueva tarea...">
+                        <button class="btn" onclick="agregarTarea()">Agregar Tarea</button>
+                    </div>
+                    <ul id="lista-tareas"></ul>
+                </section>
+
+                <!-- Cambiar Colores -->
+                <section class="demo-section">
+                    <h2>Cambio Dinámico de Colores</h2>
+                    <p>Haz clic en cualquier color para cambiar el fondo de la página</p>
+                    <div class="color-grid">
+                        <div class="color-box" style="background: #e74c3c;" onclick="cambiarFondo('#e74c3c')">Rojo</div>
+                        <div class="color-box" style="background: #3498db;" onclick="cambiarFondo('#3498db')">Azul</div>
+                        <div class="color-box" style="background: #2ecc71;" onclick="cambiarFondo('#2ecc71')">Verde
+                        </div>
+                        <div class="color-box" style="background: #f39c12;" onclick="cambiarFondo('#f39c12')">Naranja
+                        </div>
+                        <div class="color-box" style="background: #9b59b6;" onclick="cambiarFondo('#9b59b6')">Morado
+                        </div>
+                        <div class="color-box" style="background: #34495e;" onclick="cambiarFondo('#34495e')">Gris</div>
+                    </div>
+                    <button class="btn" onclick="restaurarFondo()">Restaurar Fondo Original</button>
+                </section>
+
+                <!-- Formulario Dinamico -->
+                <section class="demo-section">
+                    <h2>Formulario Interactivo</h2>
+                    <form id="formulario-dinamico">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="edad">Edad:</label>
+                            <input type="number" id="edad" name="edad" min="1" max="120">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+                        </div>
+                        <button type="button" class="btn" onclick="procesarFormulario()">Procesar Datos</button>
+                        <button type="button" class="btn warning" onclick="limpiarFormulario()">Limpiar</button>
+                    </form>
+                    <div id="resultado-formulario"
+                        style="margin-top: 1rem; padding: 1rem; background: var(--light-color); border-radius: 5px; display: none;">
+                    </div>
+                </section>
+
+                <!-- Galería Dinamica -->
+                <section class="demo-section">
+                    <h2>Galería de Elementos</h2>
+                    <button class="btn" onclick="agregarImagen()">Agregar Elemento</button>
+                    <button class="btn danger" onclick="eliminarUltimaImagen()">Eliminar Último</button>
+                    <button class="btn warning" onclick="limpiarGaleria()">Limpiar Todo</button>
+                    <div class="galeria" id="galeria"></div>
+                </section>
+
+                <!-- Control de Slider -->
+                <section class="demo-section">
+                    <h2>Control de Opacidad</h2>
+                    <div class="slider-container">
+                        <label for="opacidad-slider">Opacidad del contenido:</label>
+                        <input type="range" id="opacidad-slider" class="slider" min="10" max="100" value="100"
+                            oninput="cambiarOpacidad(this.value)">
+                        <span id="valor-opacidad">100%</span>
+                    </div>
+                </section>
+
+                <!-- Texto Dinamico -->
+                <section class="demo-section">
+                    <h2>Manipulación de Texto</h2>
+                    <div class="form-group">
+                        <input type="text" id="texto-input" placeholder="Escribe algo aquí..."
+                            oninput="actualizarTexto()">
+                    </div>
+                    <div style="margin: 1rem 0;">
+                        <button class="btn" onclick="cambiarEstilo('mayuscula')">MAYÚSCULAS</button>
+                        <button class="btn" onclick="cambiarEstilo('minuscula')">minúsculas</button>
+                        <button class="btn" onclick="cambiarEstilo('capitalize')">Capitalizar</button>
+                        <button class="btn" onclick="cambiarEstilo('reverse')">Invertir</button>
+                    </div>
+                    <div id="texto-resultado"
+                        style="padding: 1rem; background: var(--light-color); border-radius: 5px; font-size: 1.2rem; min-height: 50px; display: flex; align-items: center;">
+                        Tu texto aparecerá aquí...
+                    </div>
+                </section>
+
+                <!-- Elementos Ocultos y visibles -->
+                <section class="demo-section">
+                    <h2>Control de Visibilidad</h2>
+                    <div style="margin: 1rem 0;">
+                        <button class="btn" onclick="toggleElemento('elemento1')">Toggle Elemento 1</button>
+                        <button class="btn" onclick="toggleElemento('elemento2')">Toggle Elemento 2</button>
+                        <button class="btn" onclick="toggleElemento('elemento3')">Toggle Elemento 3</button>
+                    </div>
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
+                        <div id="elemento1" class="demo-element"
+                            style="background: #e74c3c; padding: 2rem; border-radius: 10px; color: white; text-align: center;">
+                            Elemento 1
+                        </div>
+                        <div id="elemento2" class="demo-element"
+                            style="background: #3498db; padding: 2rem; border-radius: 10px; color: white; text-align: center;">
+                            Elemento 2
+                        </div>
+                        <div id="elemento3" class="demo-element"
+                            style="background: #2ecc71; padding: 2rem; border-radius: 10px; color: white; text-align: center;">
+                            Elemento 3
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-    </nav>
-
-    <!-- Contenido Principal -->
-    <div class="container">
-        <header class="page-header">
-            <h1>Manipulación del DOM</h1>
-            <p>Demostración interactiva de manipulación de elementos del DOM usando JavaScript</p>
-        </header>
-
-        <!-- Contador Dinamico -->
-        <section class="demo-section">
-            <h2>Contador Dinámico</h2>
-            <div class="contador-display">
-                <div class="contador-numero" id="contador">0</div>
-                <button class="btn success" onclick="incrementar()">Incrementar</button>
-                <button class="btn warning" onclick="decrementar()">Decrementar</button>
-                <button class="btn danger" onclick="resetear()">Resetear</button>
-            </div>
-        </section>
-
-        <!-- Lista de Tareas -->
-        <section class="demo-section">
-            <h2>Lista de Tareas Dinámica</h2>
-            <div class="form-group">
-                <input type="text" id="nueva-tarea" placeholder="Escribe una nueva tarea...">
-                <button class="btn" onclick="agregarTarea()">Agregar Tarea</button>
-            </div>
-            <ul id="lista-tareas"></ul>
-        </section>
-
-        <!-- Cambiar Colores -->
-        <section class="demo-section">
-            <h2>Cambio Dinámico de Colores</h2>
-            <p>Haz clic en cualquier color para cambiar el fondo de la página</p>
-            <div class="color-grid">
-                <div class="color-box" style="background: #e74c3c;" onclick="cambiarFondo('#e74c3c')">Rojo</div>
-                <div class="color-box" style="background: #3498db;" onclick="cambiarFondo('#3498db')">Azul</div>
-                <div class="color-box" style="background: #2ecc71;" onclick="cambiarFondo('#2ecc71')">Verde</div>
-                <div class="color-box" style="background: #f39c12;" onclick="cambiarFondo('#f39c12')">Naranja</div>
-                <div class="color-box" style="background: #9b59b6;" onclick="cambiarFondo('#9b59b6')">Morado</div>
-                <div class="color-box" style="background: #34495e;" onclick="cambiarFondo('#34495e')">Gris</div>
-            </div>
-            <button class="btn" onclick="restaurarFondo()">Restaurar Fondo Original</button>
-        </section>
-
-        <!-- Formulario Dinamico -->
-        <section class="demo-section">
-            <h2>Formulario Interactivo</h2>
-            <form id="formulario-dinamico">
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                <div class="form-group">
-                    <label for="edad">Edad:</label>
-                    <input type="number" id="edad" name="edad" min="1" max="120">
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
-                </div>
-                <button type="button" class="btn" onclick="procesarFormulario()">Procesar Datos</button>
-                <button type="button" class="btn warning" onclick="limpiarFormulario()">Limpiar</button>
-            </form>
-            <div id="resultado-formulario" style="margin-top: 1rem; padding: 1rem; background: var(--light-color); border-radius: 5px; display: none;"></div>
-        </section>
-
-        <!-- Galería Dinamica -->
-        <section class="demo-section">
-            <h2>Galería de Elementos</h2>
-            <button class="btn" onclick="agregarImagen()">Agregar Elemento</button>
-            <button class="btn danger" onclick="eliminarUltimaImagen()">Eliminar Último</button>
-            <button class="btn warning" onclick="limpiarGaleria()">Limpiar Todo</button>
-            <div class="galeria" id="galeria"></div>
-        </section>
-
-        <!-- Control de Slider -->
-        <section class="demo-section">
-            <h2>Control de Opacidad</h2>
-            <div class="slider-container">
-                <label for="opacidad-slider">Opacidad del contenido:</label>
-                <input type="range" id="opacidad-slider" class="slider" min="10" max="100" value="100" oninput="cambiarOpacidad(this.value)">
-                <span id="valor-opacidad">100%</span>
-            </div>
-        </section>
-
-        <!-- Texto Dinamico -->
-        <section class="demo-section">
-            <h2>Manipulación de Texto</h2>
-            <div class="form-group">
-                <input type="text" id="texto-input" placeholder="Escribe algo aquí..." oninput="actualizarTexto()">
-            </div>
-            <div style="margin: 1rem 0;">
-                <button class="btn" onclick="cambiarEstilo('mayuscula')">MAYÚSCULAS</button>
-                <button class="btn" onclick="cambiarEstilo('minuscula')">minúsculas</button>
-                <button class="btn" onclick="cambiarEstilo('capitalize')">Capitalizar</button>
-                <button class="btn" onclick="cambiarEstilo('reverse')">Invertir</button>
-            </div>
-            <div id="texto-resultado" style="padding: 1rem; background: var(--light-color); border-radius: 5px; font-size: 1.2rem; min-height: 50px; display: flex; align-items: center;">
-                Tu texto aparecerá aquí...
-            </div>
-        </section>
-
-        <!-- Elementos Ocultos y visibles -->
-        <section class="demo-section">
-            <h2>Control de Visibilidad</h2>
-            <div style="margin: 1rem 0;">
-                <button class="btn" onclick="toggleElemento('elemento1')">Toggle Elemento 1</button>
-                <button class="btn" onclick="toggleElemento('elemento2')">Toggle Elemento 2</button>
-                <button class="btn" onclick="toggleElemento('elemento3')">Toggle Elemento 3</button>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
-                <div id="elemento1" class="demo-element" style="background: #e74c3c; padding: 2rem; border-radius: 10px; color: white; text-align: center;">
-                    Elemento 1
-                </div>
-                <div id="elemento2" class="demo-element" style="background: #3498db; padding: 2rem; border-radius: 10px; color: white; text-align: center;">
-                    Elemento 2
-                </div>
-                <div id="elemento3" class="demo-element" style="background: #2ecc71; padding: 2rem; border-radius: 10px; color: white; text-align: center;">
-                    Elemento 3
-                </div>
-            </div>
-        </section>
-    </div>
-        <footer>
-        <p>&copy; 2025 Bitacora Web. Emiliano Rivero Meraz</p>
-    </footer>
-    <script src="js/dom_script.js"></script>
+        <script src="js/dom_script.js"></script>
 </body>
+
 </html>

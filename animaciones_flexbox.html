@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones y Flexbox CSS - Bitácora Web</title>
+    <link rel="stylesheet" href="css/animaciones_flexbox.css">
+</head>
+
+<body>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+    <div class="page-container">
+        <!-- MENÚ LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1>Mi Bitácora</h1>
+                <p>Diseño Web HTML 5 y CSS <br> Emiliano Rivero Meraz </p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
+                        </svg> Inicio</span>
+                </a>
+                <a href="dom.html" class="nav-link">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-diagram-3-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zm-6 8A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm6 0A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5z" />
+                        </svg> Manipulación DOM</span>
+                </a>
+                <a href="media_queries.html" class="nav-link">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-bandaid-fill" viewBox="0 0 16 16">
+                            <path
+                                d="m2.68 7.676 6.49-6.504a4 4 0 0 1 5.66 5.653l-1.477 1.529-5.006 5.006-1.523 1.472a4 4 0 0 1-5.653-5.66l.001-.002 1.505-1.492.001-.002Zm5.71-2.858a.5.5 0 1 0-.708.707.5.5 0 0 0 .707-.707ZM6.974 6.939a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707M5.56 8.354a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708m2.828 2.828a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707m1.414-2.121a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707m1.414-.707a.5.5 0 1 0-.706-.708.5.5 0 0 0 .707.708Zm-4.242.707a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707m1.414-.707a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708m1.414-2.122a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707M8.646 3.354l4 4 .708-.708-4-4zm-1.292 9.292-4-4-.708.708 4 4z" />
+                        </svg> Media Queries</span>
+                </a>
+                <a href="diseno_adaptativo.html" class="nav-link">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-phone-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0" />
+                        </svg> Diseño Adaptativo</span>
+                </a>
+                <a href="animaciones_flexbox.html" class="nav-link active">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-rocket-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M10.175 1.991c.81 1.312 1.583 3.43 1.778 6.819l1.5 1.83A2.5 2.5 0 0 1 14 12.202V15.5a.5.5 0 0 1-.9.3l-1.125-1.5c-.166-.222-.42-.4-.752-.57-.214-.108-.414-.192-.627-.282l-.196-.083C9.7 13.793 8.85 14 8 14s-1.7-.207-2.4-.635q-.101.044-.198.084c-.211.089-.411.173-.625.281-.332.17-.586.348-.752.57L2.9 15.8a.5.5 0 0 1-.9-.3v-3.298a2.5 2.5 0 0 1 .548-1.562l.004-.005L4.049 8.81c.197-3.323.969-5.434 1.774-6.756.466-.767.94-1.262 1.31-1.57a3.7 3.7 0 0 1 .601-.41A.55.55 0 0 1 8 0c.101 0 .17.027.25.064q.056.025.145.075c.118.066.277.167.463.315.373.297.85.779 1.317 1.537M9.5 6c0-1.105-.672-2-1.5-2s-1.5.895-1.5 2S7.172 8 8 8s1.5-.895 1.5-2" />
+                            <path
+                                d="M8 14.5c.5 0 .999-.046 1.479-.139L8.4 15.8a.5.5 0 0 1-.8 0l-1.079-1.439c.48.093.98.139 1.479.139" />
+                        </svg> Motion y Flexbox</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="main-content">
+            <div class="container">
+                <header class="page-header">
+                    <h1>Animaciones y Flexbox CSS</h1>
+                    <p>Explorando animaciones, transiciones, transformaciones y el poder de Flexbox para layouts
+                        modernos</p>
+                </header>
+
+                <main>
+                    <!-- SECCIÓN 1: ANIMACIONES CSS -->
+                    <section class="section">
+                        <h2>Animaciones CSS</h2>
+                        <div class="section-intro">
+                            Las animaciones CSS permiten crear efectos visuales dinámicos sin necesidad de JavaScript.
+                            Utilizando <strong>@keyframes</strong>, <strong>transitions</strong> y
+                            <strong>transforms</strong>,
+                            podemos dar vida a nuestras interfaces web, mejorar la experiencia de usuario y crear
+                            interacciones
+                            atractivas y profesionales.
+                        </div>
+
+                        <h3 style="color: var(--primary-color); margin: 2rem 0 1rem;">Ejemplos de Animaciones</h3>
+
+                        <div class="animations-grid">
+                            <div class="animation-card">
+                                <h4>Bounce (Rebote)</h4>
+                                <div class="animation-demo bounce">B</div>
+                                <p>Movimiento de rebote continuo usando translateY</p>
+                            </div>
+
+                            <div class="animation-card">
+                                <h4>Rotate (Rotación)</h4>
+                                <div class="animation-demo rotate">R</div>
+                                <p>Rotación completa de 360 grados infinita</p>
+                            </div>
+
+                            <div class="animation-card">
+                                <h4>Pulse (Pulso)</h4>
+                                <div class="animation-demo pulse">P</div>
+                                <p>Efecto de pulso con scale y opacity</p>
+                            </div>
+
+                            <div class="animation-card">
+                                <h4>Shake (Sacudir)</h4>
+                                <div class="animation-demo shake">S</div>
+                                <p>Movimiento horizontal sacudiendose</p>
+                            </div>
+
+                            <div class="animation-card">
+                                <h4>Fade (Desvanecimiento)</h4>
+                                <div class="animation-demo fade">F</div>
+                                <p>Desvanecimiento suave con opacity</p>
+                            </div>
+
+                            <div class="animation-card">
+                                <h4>Slide (Deslizamiento)</h4>
+                                <div class="animation-demo slide">D</div>
+                                <p>Deslizamiento horizontal continuo</p>
+                            </div>
+                        </div>
+
+                        <h3 style="color: var(--primary-color); margin: 2rem 0 1rem;">Código</h3>
+                        <div class="code-example">
+                            <pre>
+/* animación con @keyframes */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Aplicar animación */
+.elemento {
+    animation: bounce 1s infinite;
+}
+
+/* Transiciones suaves */
+.boton {
+    transition: all 0.3s ease;
+}
+
+.boton:hover {
+    transform: scale(1.1);
+    background: blue;
+}
+                            </pre>
+                        </div>
+
+                        <div class="key-concepts">
+                            <h4>Conceptos Clave:</h4>
+                            <ul>
+                                <li><strong>@keyframes:</strong> Define los estados de la animación</li>
+                                <li><strong>animation:</strong> Aplica la animación al elemento</li>
+                                <li><strong>transition:</strong> Suaviza cambios de propiedades CSS</li>
+                                <li><strong>transform:</strong> Aplica transformaciones 2D/3D (translate, rotate, scale,
+                                    skew)</li>
+                                <li><strong>timing-function:</strong> Controla la velocidad (ease, linear, ease-in-out)
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- SECCIÓN 2: FLEXBOX -->
+                    <section class="section">
+                        <h2>Flexbox CSS</h2>
+                        <div class="section-intro">
+                            <strong>Flexbox</strong> (Flexible Box Layout) es un modelo de diseño CSS que facilita la
+                            creación
+                            de layouts flexibles y responsivo. Permite distribuir espacio y alinear elementos de manera
+                            eficiente,
+                            incluso cuando sus tamaños son desconocidos o dinámicos.
+                        </div>
+
+                        <div class="flexbox-examples">
+                            <!-- justify-content -->
+                            <div class="flex-example">
+                                <h3>justify-content (Alineación Horizontal)</h3>
+                                <p class="flex-example-description">
+                                    Controla cómo se distribuyen los elementos a lo largo del eje principal (horizontal
+                                    por defecto).
+                                </p>
+
+                                <h4 style="margin: 1rem 0 0.5rem;">flex-start (inicio)</h4>
+                                <div class="flex-container-demo flex-start">
+                                    <div class="flex-item">1</div>
+                                    <div class="flex-item">2</div>
+                                    <div class="flex-item">3</div>
+                                </div>
+
+                                <h4 style="margin: 1rem 0 0.5rem;">center (centro)</h4>
+                                <div class="flex-container-demo flex-center">
+                                    <div class="flex-item">1</div>
+                                    <div class="flex-item">2</div>
+                                    <div class="flex-item">3</div>
+                                </div>
+
+                                <h4 style="margin: 1rem 0 0.5rem;">space-between (espacio entre)</h4>
+                                <div class="flex-container-demo flex-space-between">
+                                    <div class="flex-item">1</div>
+                                    <div class="flex-item">2</div>
+                                    <div class="flex-item">3</div>
+                                </div>
+                            </div>
+
+                            <!-- align-items -->
+                            <div class="flex-example">
+                                <h3>align-items (Alineación Vertical)</h3>
+                                <p class="flex-example-description">
+                                    Controla cómo se alinean los elementos a lo largo del eje transversal (vertical por
+                                    defecto).
+                                </p>
+
+                                <h4 style="margin: 1rem 0 0.5rem;">flex-start (arriba)</h4>
+                                <div class="flex-container-demo flex-align-start">
+                                    <div class="flex-item tall">Alto</div>
+                                    <div class="flex-item short">Bajo</div>
+                                    <div class="flex-item">Normal</div>
+                                </div>
+
+                                <h4 style="margin: 1rem 0 0.5rem;">center (centro vertical)</h4>
+                                <div class="flex-container-demo flex-align-center">
+                                    <div class="flex-item tall">Alto</div>
+                                    <div class="flex-item short">Bajo</div>
+                                    <div class="flex-item">Normal</div>
+                                </div>
+
+                                <h4 style="margin: 1rem 0 0.5rem;">flex-end (abajo)</h4>
+                                <div class="flex-container-demo flex-align-end">
+                                    <div class="flex-item tall">Alto</div>
+                                    <div class="flex-item short">Bajo</div>
+                                    <div class="flex-item">Normal</div>
+                                </div>
+                            </div>
+
+                            <!-- flex-direction -->
+                            <div class="flex-example">
+                                <h3>flex-direction (Dirección)</h3>
+                                <p class="flex-example-description">
+                                    Define la dirección del eje principal del contenedor flex.
+                                </p>
+
+                                <h4 style="margin: 1rem 0 0.5rem;">row (horizontal)</h4>
+                                <div class="flex-container-demo flex-row">
+                                    <div class="flex-item">1</div>
+                                    <div class="flex-item">2</div>
+                                    <div class="flex-item">3</div>
+                                </div>
+
+                                <h4 style="margin: 1rem 0 0.5rem;">column (vertical)</h4>
+                                <div class="flex-container-demo flex-column">
+                                    <div class="flex-item">1</div>
+                                    <div class="flex-item">2</div>
+                                    <div class="flex-item">3</div>
+                                </div>
+                            </div>
+
+                            <!-- flex-wrap -->
+                            <div class="flex-example">
+                                <h3>flex-wrap (Ajuste de Línea)</h3>
+                                <p class="flex-example-description">
+                                    Controla si los elementos flex deben ajustarse en múltiples líneas o permanecer en
+                                    una sola línea.
+                                </p>
+
+                                <h4 style="margin: 1rem 0 0.5rem;">wrap (permitir múltiples líneas)</h4>
+                                <div class="flex-container-demo flex-wrap-demo">
+                                    <div class="flex-item">Item 1</div>
+                                    <div class="flex-item">Item 2</div>
+                                    <div class="flex-item">Item 3</div>
+                                    <div class="flex-item">Item 4</div>
+                                    <div class="flex-item">Item 5</div>
+                                    <div class="flex-item">Item 6</div>
+                                    <div class="flex-item">Item 7</div>
+                                    <div class="flex-item">Item 8</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 style="color: var(--primary-color); margin: 2rem 0 1rem;">Código de Flexbox</h3>
+                        <div class="code-example">
+                            <pre>/* Contenedor Flex básico */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Layout con flex-direction */
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+}
+
+/* responsivo con flex-wrap */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Items flexibles */
+.item {
+    flex: 1 1 300px; /* grow, shrink, basis */
+}</pre>
+                        </div>
+
+                        <div class="key-concepts">
+                            <h4>Propiedades Principales de Flexbox:</h4>
+                            <ul>
+                                <li><strong>display: flex;</strong> Activa el modelo Flexbox en el contenedor</li>
+                                <li><strong>flex-direction:</strong> Define la dirección (row, column, row-reverse,
+                                    column-reverse)</li>
+                                <li><strong>justify-content:</strong> Alineación en el eje principal</li>
+                                <li><strong>align-items:</strong> Alineación en el eje transversal</li>
+                                <li><strong>flex-wrap:</strong> Permite que los items se ajusten en múltiples líneas
+                                </li>
+                                <li><strong>gap:</strong> Define el espacio entre elementos flex</li>
+                                <li><strong>flex:</strong> Propiedad abreviada para flex-grow, flex-shrink y flex-basis
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/animaciones_flexbox.js"></script>
+</body>
+
+</html>

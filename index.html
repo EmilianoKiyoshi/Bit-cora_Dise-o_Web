@@ -9,118 +9,318 @@
 </head>
 
 <body>
-    <!-- Navegacion -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">Mi Bitácora</a>
-            <ul class="nav-menu">
-                <li><a href="#" class="nav-link active">Inicio</a></li>
-                <li><a href="dom.html" class="nav-link">Manipulación DOM</a></li>
-                <li><a href="media_queries.html" class="nav-link">Media Queries</a></li>
-                <li><a href="diseno_adaptativo.html" class="nav-link">Diseño Adaptativo</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    <div class="page-container">
+        <!-- Navegacion -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1>Mi Bitácora</h1>
+                <p>Diseño Web HTML 5 y CSS <br> Emiliano Rivero Meraz </p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link active">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
+                        </svg> Inicio</span>
+                </a>
+                <a href="dom.html" class="nav-link">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-diagram-3-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zm-6 8A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm6 0A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5z" />
+                        </svg> Manipulación DOM</span>
+                </a>
+                <a href="media_queries.html" class="nav-link">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-bandaid-fill" viewBox="0 0 16 16">
+                            <path
+                                d="m2.68 7.676 6.49-6.504a4 4 0 0 1 5.66 5.653l-1.477 1.529-5.006 5.006-1.523 1.472a4 4 0 0 1-5.653-5.66l.001-.002 1.505-1.492.001-.002Zm5.71-2.858a.5.5 0 1 0-.708.707.5.5 0 0 0 .707-.707ZM6.974 6.939a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707M5.56 8.354a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708m2.828 2.828a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707m1.414-2.121a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707m1.414-.707a.5.5 0 1 0-.706-.708.5.5 0 0 0 .707.708Zm-4.242.707a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707m1.414-.707a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708m1.414-2.122a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707M8.646 3.354l4 4 .708-.708-4-4zm-1.292 9.292-4-4-.708.708 4 4z" />
+                        </svg> Media Queries</span>
+                </a>
+                <a href="diseno_adaptativo.html" class="nav-link">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-phone-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0" />
+                        </svg> Diseño Adaptativo</span>
+                </a>
+                <a href="animaciones_flexbox.html" class="nav-link ">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-rocket-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M10.175 1.991c.81 1.312 1.583 3.43 1.778 6.819l1.5 1.83A2.5 2.5 0 0 1 14 12.202V15.5a.5.5 0 0 1-.9.3l-1.125-1.5c-.166-.222-.42-.4-.752-.57-.214-.108-.414-.192-.627-.282l-.196-.083C9.7 13.793 8.85 14 8 14s-1.7-.207-2.4-.635q-.101.044-.198.084c-.211.089-.411.173-.625.281-.332.17-.586.348-.752.57L2.9 15.8a.5.5 0 0 1-.9-.3v-3.298a2.5 2.5 0 0 1 .548-1.562l.004-.005L4.049 8.81c.197-3.323.969-5.434 1.774-6.756.466-.767.94-1.262 1.31-1.57a3.7 3.7 0 0 1 .601-.41A.55.55 0 0 1 8 0c.101 0 .17.027.25.064q.056.025.145.075c.118.066.277.167.463.315.373.297.85.779 1.317 1.537M9.5 6c0-1.105-.672-2-1.5-2s-1.5.895-1.5 2S7.172 8 8 8s1.5-.895 1.5-2" />
+                            <path
+                                d="M8 14.5c.5 0 .999-.046 1.479-.139L8.4 15.8a.5.5 0 0 1-.8 0l-1.079-1.439c.48.093.98.139 1.479.139" />
+                        </svg> Motion y Flexbox</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Header Principal -->
+        <div class="main-content">
+            <header class="hero">
+                <div class="hero-content">
+                    <h1>Mi Bitácora de Desarrollo Web</h1>
+                    <p>Explora mis proyectos y aprendizajes en desarrollo frontend</p>
+                    <a href="#proyectos" class="cta-button">Ver Proyectos</a>
+                </div>
+            </header>
+            <!-- Sección Sobre mi -->
+            <div class="container">
+                <section class="about-section">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h2>Sobre Mí</h2>
+                            <p>Soy un estudiante de DDMI apasionado por el desarrollo web especificamente en frontend.
+                                En
+                                esta bitácora
+                                documento mi progreso y los proyectos que he desarrollado durante la clase Diseño Web,
+                                enfocándome
+                                en HTML5, CSS y JavaScript.</p>
+                            <p>Mi objetivo es crear experiencias web interactivas, responsivas y accesibles, aplicando
+                                las
+                                mejores prácticas de desarrollo.</p>
+                        </div>
+                        <div class="about-image">
+                            <div><svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
+                                    class="bi bi-emoji-sunglasses-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M2.31 5.243A1 1 0 0 1 3.28 4H6a1 1 0 0 1 1 1v.116A4.2 4.2 0 0 1 8 5c.35 0 .69.04 1 .116V5a1 1 0 0 1 1-1h2.72a1 1 0 0 1 .97 1.243l-.311 1.242A2 2 0 0 1 11.439 8H11a2 2 0 0 1-1.994-1.839A3 3 0 0 0 8 6c-.393 0-.74.064-1.006.161A2 2 0 0 1 5 8h-.438a2 2 0 0 1-1.94-1.515zM4.969 9.75A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .866-.5z" />
+                                </svg></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Seccion de Proyectos -->
+            <div class="container">
+                <section class="section" id="proyectos">
+                    <h2>Mis Proyectos</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>Bitácora Responsiva</h3>
+                            <p>Esta misma página web, desarrollada con HTML5 y CSS3, implementando un diseño
+                                responsivo y navegación funcional.</p>
+                            <a href="#" class="project-link">Estás Aquí</a>
+                        </div>
+                        <div class="project-card">
+                            <h3>Manipulación del DOM</h3>
+                            <p>Proyecto interactivo que demuestra el uso de JavaScript para manipular elementos del DOM,
+                                crear interacciones dinámicas y manejar eventos de usuario.</p>
+                            <a href="dom.html" class="project-link">Ver Proyecto</a>
+                        </div>
+                        <div class="project-card">
+                            <h3>Media Queries</h3>
+                            <p>Implementación de diseño responsivo utilizando Media Queries de CSS, optimizado para
+                                diferentes dispositivos y tamaños de pantalla.</p>
+                            <a href="media_queries.html" class="project-link">Ver Proyecto</a>
+                        </div>
+                        <div class="project-card">
+                            <h3>Diseño Adaptativo</h3>
+                            <p>Ejemplos prácticos de CSS moderno con unidades relativas, tipografía responsiva e
+                                imágenes
+                                adaptativas para lograr diseños que se ajustan a cualquier dispositivo</p>
+                            <a href="diseno_adaptativo.html" class="project-link">Ver Proyecto</a>
+                        </div>
+                        <div class="project-card">
+                            <h3>Animaciones & Flexbox</h3>
+                            <p>Proyecto que combina animaciones en CSS y el uso de Flexbox para crear diseños dinámicos,
+                                fluidos y visualmente atractivos en diferentes tamaños de pantalla.</p>
+                            <a href="animaciones_flexbox.html" class="project-link">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sección de Tecnologias -->
+            <div class="container">
+                <section class="section">
+                    <h2>Tecnologías</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>HTML5</h3>
+                            <p>Estructura semántica y moderna para aplicaciones web, utilizando las últimas
+                                características
+                                del estándar.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>CSS3</h3>
+                            <p>Diseño con Flexbox, Grid, animaciones y Media Queries para crear interfaces
+                                responsivas y atractivas.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>JavaScript</h3>
+                            <p>Interactividad y manipulación del DOM para crear experiencias de usuario dinámicas y
+                                modernas.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- SECCIÓN 3: RESUMEN DE CONOCIMIENTOS -->
+            <div class="container">
+                <section class="section">
+                    <h2>Resumen de Temas Aprendidos</h2>
+                    <div class="section-intro">
+                        A lo largo del curso hemos explorado diversos conceptos fundamentales del desarrollo web
+                        frontend.
+                        Aquí está un resumen completo de todos los temas que hemos cubierto.
+                    </div>
+
+                    <div class="summary-grid">
+                        <!-- Diseño Adaptativo -->
+                        <div class="summary-card">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-phone-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0" />
+                                </svg>
+                                Diseño Adaptativo
+                            </h3>
+                            <p style="margin-bottom: 1rem; color: var(--dark-color);">
+                                Técnicas para crear sitios web que se adaptan a diferentes dispositivos y tamaños de
+                                pantalla.
+                            </p>
+                            <ul>
+                                <li>Unidades relativas: rem, em, vh, vw, vmin, vmax</li>
+                                <li>Tipografía responsiva con clamp() y calc()</li>
+                                <li>Imágenes adaptativas con srcset y sizes</li>
+                                <li>Elemento &lt;picture&gt; para dirección de arte</li>
+                                <li>@font-face para tipografías personalizadas</li>
+                                <li>Object-fit para control de imágenes</li>
+                                <li>Mobile-first approach</li>
+                            </ul>
+                        </div>
+
+                        <!-- Manipulación del DOM -->
+                        <div class="summary-card">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-diagram-3-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zm-6 8A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm6 0A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5z" />
+                                </svg>
+                                Manipulación del DOM
+                            </h3>
+                            <p style="margin-bottom: 1rem; color: var(--dark-color);">
+                                Uso de JavaScript para interactuar dinámicamente con elementos HTML.
+                            </p>
+                            <ul>
+                                <li>querySelector y querySelectorAll</li>
+                                <li>createElement y appendChild</li>
+                                <li>addEventListener para eventos</li>
+                                <li>innerHTML, textContent y value</li>
+                                <li>classList (add, remove, toggle)</li>
+                                <li>setAttribute y getAttribute</li>
+                                <li>Manipulación de estilos con style</li>
+                                <li>Event delegation y bubbling</li>
+                            </ul>
+                        </div>
+
+                        <!-- Media Queries -->
+                        <div class="summary-card">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-bandaid-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="m2.68 7.676 6.49-6.504a4 4 0 0 1 5.66 5.653l-1.477 1.529-5.006 5.006-1.523 1.472a4 4 0 0 1-5.653-5.66l.001-.002 1.505-1.492.001-.002Zm5.71-2.858a.5.5 0 1 0-.708.707.5.5 0 0 0 .707-.707ZM6.974 6.939a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707M5.56 8.354a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708m2.828 2.828a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707m1.414-2.121a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707m1.414-.707a.5.5 0 1 0-.706-.708.5.5 0 0 0 .707.708Zm-4.242.707a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707m1.414-.707a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708m1.414-2.122a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707M8.646 3.354l4 4 .708-.708-4-4zm-1.292 9.292-4-4-.708.708 4 4z" />
+                                </svg>
+                                Media Queries
+                            </h3>
+                            <p style="margin-bottom: 1rem; color: var(--dark-color);">
+                                Aplicación de estilos CSS específicos según características del dispositivo.
+                            </p>
+                            <ul>
+                                <li>Breakpoints estándar (móvil, tablet, desktop)</li>
+                                <li>@media screen and (max-width: 768px)</li>
+                                <li>Orientación: portrait y landscape</li>
+                                <li>Grid y Flexbox responsivos</li>
+                                <li>Menús adaptativos (hamburguesa)</li>
+                                <li>Layouts que cambian según pantalla</li>
+                                <li>prefers-color-scheme para modo oscuro</li>
+                            </ul>
+                        </div>
+
+                        <!-- Animaciones CSS -->
+                        <div class="summary-card">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-ev-front-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679q.05.242.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848Zm6.75.51a.186.186 0 0 0-.23.034L6.05 7.246a.188.188 0 0 0 .137.316h1.241l-.673 2.195a.19.19 0 0 0 .085.218c.075.043.17.03.23-.034l2.88-3.187a.188.188 0 0 0-.137-.316H8.572l.782-2.195a.19.19 0 0 0-.085-.218Z" />
+                                </svg>
+                                Animaciones CSS
+                            </h3>
+                            <p style="margin-bottom: 1rem; color: var(--dark-color);">
+                                Creación de efectos visuales dinámicos y transiciones suaves.
+                            </p>
+                            <ul>
+                                <li>@keyframes para definir animaciones</li>
+                                <li>animation: nombre duración timing-function</li>
+                                <li>transition para cambios suaves</li>
+                                <li>transform: translate, rotate, scale, skew</li>
+                                <li>Efectos hover interactivos</li>
+                                <li>Animation timing functions (ease, linear)</li>
+                                <li>Animation delay e iteration count</li>
+                            </ul>
+                        </div>
+
+                        <!-- Flexbox -->
+                        <div class="summary-card">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-aspect-ratio-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 12.5v-9A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5M2.5 4a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 1 0V5h2.5a.5.5 0 0 0 0-1zm11 8a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-1 0V11h-2.5a.5.5 0 0 0 0 1z" />
+                                </svg>
+                                Flexbox CSS
+                            </h3>
+                            <p style="margin-bottom: 1rem; color: var(--dark-color);">
+                                Sistema de layout flexible para diseños modernos y responsivos.
+                            </p>
+                            <ul>
+                                <li>display: flex para activar Flexbox</li>
+                                <li>justify-content para alineación horizontal</li>
+                                <li>align-items para alineación vertical</li>
+                                <li>flex-direction: row | column</li>
+                                <li>flex-wrap para múltiples líneas</li>
+                                <li>gap para espaciado entre elementos</li>
+                                <li>flex: grow shrink basis</li>
+                                <li>order para cambiar orden visual</li>
+                            </ul>
+                        </div>
+
+                        <!-- HTML5 y CSS3 -->
+                        <div class="summary-card">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-file-code-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M6.646 5.646a.5.5 0 1 1 .708.708L5.707 8l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708zm2.708 0 2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 1 1 .708-.708" />
+                                </svg>
+                                HTML5 y CSS3
+                            </h3>
+                            <p style="margin-bottom: 1rem; color: var(--dark-color);">
+                                Estructura semántica y estilos modernos para la web.
+                            </p>
+                            <ul>
+                                <li>Etiquetas semánticas (header, nav, main, footer)</li>
+                                <li>Variables CSS con :root</li>
+                                <li>Box-sizing: border-box</li>
+                                <li>Position: fixed, sticky, absolute</li>
+                                <li>Border-radius, box-shadow</li>
+                                <li>Pseudo-clases (:hover, :focus, :active)</li>
+                                <li>Formularios accesibles con labels</li>
+                                <li>Gradientes lineales y radiales</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-    </nav>
-
-    <!-- Header Principal -->
-    <header>
-        <div class="hero-content">
-            <h1>Mi Bitácora de Desarrollo Web</h1>
-            <p>Explora mis proyectos y aprendizajes en desarrollo frontend</p>
-            <a href="#proyectos" class="cta-button">Ver Proyectos</a>
-        </div>
-    </header>
-
-    <!-- Contenido Principal -->
-    <main>
-        <!-- Sección Sobre mi -->
-        <div class="container">
-            <section class="about-section">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h2>Sobre Mí</h2>
-                        <p>Soy un estudiante de DDMI apasionado por el desarrollo web especificamente en frontend. En
-                            esta bitácora
-                            documento mi progreso y los proyectos que he desarrollado durante la clase Diseño Web,
-                            enfocándome
-                            en HTML5, CSS y JavaScript.</p>
-                        <p>Mi objetivo es crear experiencias web interactivas, responsivas y accesibles, aplicando las
-                            mejores prácticas de desarrollo.</p>
-                    </div>
-                    <div class="about-image">
-                        <div>👨‍💻</div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Seccion de Proyectos -->
-        <div class="container">
-            <section class="section" id="proyectos">
-                <h2>Mis Proyectos</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>Bitácora Responsiva</h3>
-                        <p>Esta misma página web, desarrollada con HTML5 y CSS3, implementando un diseño
-                            responsivo y navegación funcional.</p>
-                        <a href="#" class="project-link">Estás Aquí</a>
-                    </div>
-                    <div class="project-card">
-                        <h3>Manipulación del DOM</h3>
-                        <p>Proyecto interactivo que demuestra el uso de JavaScript para manipular elementos del DOM,
-                            crear interacciones dinámicas y manejar eventos de usuario.</p>
-                        <a href="dom.html" class="project-link">Ver Proyecto</a>
-                    </div>
-                    <div class="project-card">
-                        <h3>Media Queries</h3>
-                        <p>Implementación de diseño responsivo utilizando Media Queries de CSS, optimizado para
-                            diferentes dispositivos y tamaños de pantalla.</p>
-                        <a href="media_queries.html" class="project-link">Ver Proyecto</a>
-                    </div>
-                    <div class="project-card">
-                        <h3>Diseño Adaptativo</h3>
-                        <p>Ejemplos prácticos de CSS moderno con unidades relativas, tipografía responsiva e imágenes
-                            adaptativas para lograr diseños que se ajustan a cualquier dispositivo</p>
-                        <a href="diseno_adaptativo.html" class="project-link">Ver Proyecto</a>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Sección de Tecnologias -->
-        <div class="container">
-            <section class="section">
-                <h2>Tecnologías</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>HTML5</h3>
-                        <p>Estructura semántica y moderna para aplicaciones web, utilizando las últimas características
-                            del estándar.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>CSS3</h3>
-                        <p>Diseño con Flexbox, Grid, animaciones y Media Queries para crear interfaces
-                            responsivas y atractivas.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>JavaScript</h3>
-                        <p>Interactividad y manipulación del DOM para crear experiencias de usuario dinámicas y
-                            modernas.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Bitacora Web. Emiliano Rivero Meraz</p>
-    </footer>
+    </div>
     <script src="js/index_script.js"></script>
 </body>
 

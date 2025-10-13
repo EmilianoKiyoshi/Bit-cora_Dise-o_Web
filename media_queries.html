@@ -9,241 +9,289 @@
 
 </head>
 
-<body>
-    <!-- Indicador de dispositivo -->
-    <div class="device-indicator"></div>
+<button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
 
-    <!-- Navegacion -->
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Mi Bitácora</a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Inicio</a></li>
-                <li><a href="dom.html" class="nav-link">Manipulación DOM</a></li>
-                <li><a href="#" class="nav-link active">Media Queries</a></li>
-                <li><a href="diseno_adaptativo.html" class="nav-link">Diseño Adaptativo</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<!-- Indicador de dispositivo -->
+<div class="device-indicator" id="deviceIndicator">Detectando...</div>
+
+<div class="page-container">
+    <!-- Barra lateral -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h1>Mi Bitácora</h1>
+            <p>Diseño Web HTML 5 y CSS <br> Emiliano Rivero Meraz </p>
         </div>
-    </nav>
 
-    <!-- Contenido Principal -->
-    <div class="container">
-        <header class="page-header">
-            <h1>Diseño Responsivo con Media Queries</h1>
-            <p>Demostración de diferentes técnicas de diseño adaptativo para múltiples dispositivos</p>
-        </header>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-link">
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
+                    </svg> Inicio</span>
+            </a>
+            <a href="dom.html" class="nav-link">
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-diagram-3-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zm-6 8A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm6 0A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5z" />
+                    </svg> Manipulación DOM</span>
+            </a>
+            <a href="media_queries.html" class="nav-link  active">
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-bandaid-fill" viewBox="0 0 16 16">
+                        <path
+                            d="m2.68 7.676 6.49-6.504a4 4 0 0 1 5.66 5.653l-1.477 1.529-5.006 5.006-1.523 1.472a4 4 0 0 1-5.653-5.66l.001-.002 1.505-1.492.001-.002Zm5.71-2.858a.5.5 0 1 0-.708.707.5.5 0 0 0 .707-.707ZM6.974 6.939a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707M5.56 8.354a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708m2.828 2.828a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707m1.414-2.121a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707m1.414-.707a.5.5 0 1 0-.706-.708.5.5 0 0 0 .707.708Zm-4.242.707a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707m1.414-.707a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708m1.414-2.122a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707M8.646 3.354l4 4 .708-.708-4-4zm-1.292 9.292-4-4-.708.708 4 4z" />
+                    </svg> Media Queries</span>
+            </a>
+            <a href="diseno_adaptativo.html" class="nav-link">
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-phone-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0" />
+                    </svg> Diseño Adaptativo</span>
+            </a>
+            <a href="animaciones_flexbox.html" class="nav-link">
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-rocket-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M10.175 1.991c.81 1.312 1.583 3.43 1.778 6.819l1.5 1.83A2.5 2.5 0 0 1 14 12.202V15.5a.5.5 0 0 1-.9.3l-1.125-1.5c-.166-.222-.42-.4-.752-.57-.214-.108-.414-.192-.627-.282l-.196-.083C9.7 13.793 8.85 14 8 14s-1.7-.207-2.4-.635q-.101.044-.198.084c-.211.089-.411.173-.625.281-.332.17-.586.348-.752.57L2.9 15.8a.5.5 0 0 1-.9-.3v-3.298a2.5 2.5 0 0 1 .548-1.562l.004-.005L4.049 8.81c.197-3.323.969-5.434 1.774-6.756.466-.767.94-1.262 1.31-1.57a3.7 3.7 0 0 1 .601-.41A.55.55 0 0 1 8 0c.101 0 .17.027.25.064q.056.025.145.075c.118.066.277.167.463.315.373.297.85.779 1.317 1.537M9.5 6c0-1.105-.672-2-1.5-2s-1.5.895-1.5 2S7.172 8 8 8s1.5-.895 1.5-2" />
+                        <path
+                            d="M8 14.5c.5 0 .999-.046 1.479-.139L8.4 15.8a.5.5 0 0 1-.8 0l-1.079-1.439c.48.093.98.139 1.479.139" />
+                    </svg> Motion y Flexbox</span>
+            </a>
+        </nav>
+    </aside>
 
-        <!-- Explicación de Media Queries -->
-        <section class="demo-section">
-            <h2>¿Qué son las Media Queries?</h2>
-            <p>Las Media Queries son una característica de CSS3 que permite aplicar estilos específicos según las
-                características del dispositivo, como el ancho de pantalla, la orientación, la resolución, etc. Son
-                fundamentales para crear diseños responsivos.</p>
-            <div
-                style="background: var(--light-color); padding: 1.5rem; border-radius: 10px; margin: 1rem 0; font-family: monospace;">
-                <strong>Ejemplo básico:</strong><br>
-                @media screen and (max-width: 768px) {<br>
-                &nbsp;&nbsp;/* Estilos para pantallas menores a 768px */<br>
-                }
-            </div>
-        </section>
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1>Diseño Responsivo con Media Queries</h1>
+                <p>Demostración de diferentes técnicas de diseño adaptativo para múltiples dispositivos</p>
+            </header>
 
-        <!-- Grid Responsivo -->
-        <section class="demo-section">
-            <h2>Grid Responsivo</h2>
-            <p>Este grid se adapta automáticamente: 4 columnas en desktop, 2 en tablet y 1 en mobile</p>
-            <div class="responsive-grid">
-                <div class="grid-item">Objeto 1</div>
-                <div class="grid-item">Objeto 2</div>
-                <div class="grid-item">Objeto 3</div>
-                <div class="grid-item">Objeto 4</div>
-                <div class="grid-item">Objeto 5</div>
-                <div class="grid-item">Objeto 6</div>
-                <div class="grid-item">Objeto 7</div>
-                <div class="grid-item">Objeto 8</div>
-            </div>
-        </section>
+            <!-- Explicacion -->
+            <section class="demo-section">
+                <h2>¿Qué son las Media Queries?</h2>
+                <p>Las Media Queries son una característica de CSS3 que permite aplicar estilos específicos según las
+                    características del dispositivo, como el ancho de pantalla, la orientación, la resolución, etc. Son
+                    fundamentales para crear diseños responsivos.</p>
 
-        <!-- Navegacionm Secundaria -->
-        <section class="demo-section">
-            <h2>Navegación Adaptativa</h2>
-            <p>La navegación cambia de horizontal a vertical en dispositivos pequeños</p>
-            <nav class="secondary-nav">
-                <a href="#" class="secondary-nav-item">Inicio</a>
-                <a href="#" class="secondary-nav-item">Servicios</a>
-                <a href="#" class="secondary-nav-item">Portfolio</a>
-                <a href="#" class="secondary-nav-item">Contacto</a>
-                <a href="#" class="secondary-nav-item">Blog</a>
-            </nav>
-        </section>
+                <div class="code-block">
+                    <pre>/* Ejemplo básico de Media Query */
+@media screen and (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        padding: 1rem;
+    }
+}</pre>
+                </div>
 
-        <!-- Cards Responsivas -->
-        <section class="demo-section">
-            <h2>Tarjetas Responsivas</h2>
-            <p>Las tarjetas se reorganizan según el tamaño de pantalla: 3 columnas → 2 columnas → 1 columna</p>
-            <div class="cards-container">
-                <div class="card">
-                    <div class="card-header">🎨</div>
-                    <div class="card-content">
-                        <h3>Diseño</h3>
-                        <p>Creamos diseños modernos y atractivos que se adaptan a cualquier dispositivo.</p>
-                        <a href="#" class="card-button">Ver más</a>
+                <div style="background: var(--light-color); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;"> Redimensiona la ventana para ver
+                        los cambios en tiempo real</h4>
+                    <p>Observa cómo el grid, las cards y el layout se adaptan automáticamente a diferentes tamaños de
+                        pantalla.</p>
+                </div>
+            </section>
+
+            <!-- Grid Responsivo -->
+            <section class="demo-section">
+                <h2>Grid Responsivo con Flexbox</h2>
+                <p>Este grid se adapta automáticamente: 4 columnas → 2 columnas → 1 columna</p>
+                <div class="responsive-grid">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                    <div class="grid-item">Item 4</div>
+                    <div class="grid-item">Item 5</div>
+                    <div class="grid-item">Item 6</div>
+                    <div class="grid-item">Item 7</div>
+                    <div class="grid-item">Item 8</div>
+                </div>
+            </section>
+
+            <!-- Cards Responsivas -->
+            <section class="demo-section">
+                <h2>Tarjetas Responsivas</h2>
+                <p>Las tarjetas se reorganizan: 3 columnas → 2 columnas → 1 columna</p>
+                <div class="cards-container">
+                    <div class="card">
+                        <div class="card-header"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                            </svg></div>
+                        <div class="card-content">
+                            <h3>Diseño</h3>
+                            <p>Creamos diseños modernos y atractivos que se adaptan a cualquier dispositivo.</p>
+                            <a href="#" class="card-button">Ver más</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                fill="currentColor" class="bi bi-puzzle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.112 3.645A1.5 1.5 0 0 1 4.605 2H7a.5.5 0 0 1 .5.5v.382c0 .696-.497 1.182-.872 1.469a.5.5 0 0 0-.115.118l-.012.025L6.5 4.5v.003l.003.01q.005.015.036.053a.9.9 0 0 0 .27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.9.9 0 0 0 .271-.194.2.2 0 0 0 .036-.054l.003-.01v-.008l-.012-.025a.5.5 0 0 0-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 0 1 9 2h2.395a1.5 1.5 0 0 1 1.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0 1 11.395 14H9a.5.5 0 0 1-.5-.5v-.382c0-.696.497-1.182.872-1.469a.5.5 0 0 0 .115-.118l.012-.025.001-.006v-.003l-.003-.01a.2.2 0 0 0-.036-.053.9.9 0 0 0-.27-.194C8.91 11.1 8.49 11 8 11s-.912.1-1.19.24a.9.9 0 0 0-.271.194.2.2 0 0 0-.036.054l-.003.01v.002l.001.006.012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 0 1-.5.5H4.605a1.5 1.5 0 0 1-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238z" />
+                            </svg></div>
+                        <div class="card-content">
+                            <h3>Desarrollo</h3>
+                            <p>Desarrollamos sitios web responsivos usando las últimas tecnologías.</p>
+                            <a href="#" class="card-button">Ver más</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                fill="currentColor" class="bi bi-phone-vibrate-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M4 4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm5 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0M1.807 4.734a.5.5 0 1 0-.884-.468A8 8 0 0 0 0 8c0 1.347.334 2.618.923 3.734a.5.5 0 1 0 .884-.468A7 7 0 0 1 1 8c0-1.18.292-2.292.807-3.266m13.27-.468a.5.5 0 0 0-.884.468C14.708 5.708 15 6.819 15 8c0 1.18-.292 2.292-.807 3.266a.5.5 0 0 0 .884.468A8 8 0 0 0 16 8a8 8 0 0 0-.923-3.734M3.34 6.182a.5.5 0 1 0-.93-.364A6 6 0 0 0 2 8c0 .769.145 1.505.41 2.182a.5.5 0 1 0 .93-.364A5 5 0 0 1 3 8c0-.642.12-1.255.34-1.818m10.25-.364a.5.5 0 0 0-.93.364c.22.563.34 1.176.34 1.818s-.12 1.255-.34 1.818a.5.5 0 0 0 .93.364C13.856 9.505 14 8.769 14 8s-.145-1.505-.41-2.182" />
+                            </svg> </div>
+                        <div class="card-content">
+                            <h3>Mobile First</h3>
+                            <p>Diseñamos pensando primero en dispositivos Celulares para mejor experiencia.</p>
+                            <a href="#" class="card-button">Ver más</a>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">💻</div>
-                    <div class="card-content">
-                        <h3>Desarrollo</h3>
-                        <p>Desarrollamos sitios web responsivos usando las últimas tecnologías.</p>
-                        <a href="#" class="card-button">Ver más</a>
+            </section>
+
+            <!-- Layout con el  Sidebar -->
+            <section class="demo-section">
+                <h2>Layout con Sidebar</h2>
+                <p>En Celular, el sidebar se mueve debajo del contenido principal</p>
+                <div class="layout-with-sidebar">
+                    <aside class="content-sidebar">
+                        <h3>Menu Lateral</h3>
+                        <ul>
+                            <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-bar-chart-line-fill" viewBox="0 0 16 10">
+                                    <path
+                                        d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1z" />
+                                </svg> Dashboard</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-people-fill" viewBox="0 -2 16 16">
+                                    <path
+                                        d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                                </svg> Usuarios</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-file-earmark-richtext-fill" viewBox="1 0 16 16">
+                                    <path
+                                        d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M7 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V9.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V9s1.54-1.274 1.639-1.208M5 11h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1m0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1" />
+                                </svg> Contenido</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                                </svg> Configuración</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5" />
+                                </svg> Analíticas</li>
+                        </ul>
+                    </aside>
+                    <main class="main-area">
+                        <h3>Contenido Principal</h3>
+                        <p>Este es el área principal de contenido. En pantallas grandes aparece junto al sidebar, pero
+                            en celulares el sidebar se coloca debajo para una mejor experiencia de usuario.
+                        </p>
+                        <p>El diseño responsivo nos permite reorganizar los elementos de manera inteligente según el
+                            espacio disponible, priorizando siempre la usabilidad.</p>
+                    </main>
+                </div>
+            </section>
+
+            <!-- Breakpoints -->
+            <section class="demo-section">
+                <h2>Breakpoints Utilizados</h2>
+                <p>Estos son los puntos de quiebre implementados en esta página:</p>
+                <div class="breakpoints-demo">
+                    <div class="breakpoint-cards">
+                        <div class="breakpoint-card">
+                            <h4><svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor"
+                                    class="bi bi-pc-display" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1zm1 13.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0m2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0M9.5 1a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM9 3.5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1h-5a.5.5 0 0 0-.5.5M1.5 2A1.5 1.5 0 0 0 0 3.5v7A1.5 1.5 0 0 0 1.5 12H6v2h-.5a.5.5 0 0 0 0 1H7v-4H1.5a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5H7V2z" />
+                                </svg>Desktop (>1024px)</h4>
+                            <ul>
+                                <li>Menú lateral fijo</li>
+                                <li>Grid de 4 columnas</li>
+                                <li>Cards en 3 columnas</li>
+                                <li>Sidebar visible</li>
+                                <li>Efectos hover completos</li>
+                            </ul>
+                        </div>
+
+                        <div class="breakpoint-card">
+                            <h4><svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor"
+                                    class="bi bi-tablet-landscape-fill" viewBox="0 -2 16 16">
+                                    <path
+                                        d="M2 14a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2zm11-7a1 1 0 1 0 0 2 1 1 0 0 0 0-2" />
+                                </svg> Tablet (481-1024px)</h4>
+                            <ul>
+                                <li>Menú superior horizontal</li>
+                                <li>Grid de 2 columnas</li>
+                                <li>Cards en 2 columnas</li>
+                                <li>Menú hamburguesa</li>
+                                <li>Layout adaptado</li>
+                            </ul>
+                        </div>
+
+                        <div class="breakpoint-card">
+                            <h4><svg xmlns="http://www.w3.org/2000/svg" width="40" height="35" fill="currentColor"
+                                    class="bi bi-phone-fill" viewBox="-6 -8 14 24">
+                                    <path
+                                        d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0" />
+                                </svg> Celular (≤480px)</h4>
+                            <ul>
+                                <li>Menú vertical superior</li>
+                                <li>Grid de 1 columna</li>
+                                <li>Cards en 1 columna</li>
+                                <li>Sidebar debajo</li>
+                                <li>Optimizado táctil</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">📱</div>
-                    <div class="card-content">
-                        <h3>Mobile First</h3>
-                        <p>Diseñamos pensando primero en dispositivos móviles para mejor experiencia.</p>
-                        <a href="#" class="card-button">Ver más</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Layout con Sidebar -->
-        <section class="demo-section">
-            <h2>Layout con Sidebar</h2>
-            <p>En dispositivos pequeños, el sidebar se mueve debajo del contenido principal</p>
-            <div class="layout-with-sidebar">
-                <aside class="sidebar">
-                    <h3>Menu Lateral</h3>
-                    <ul>
-                        <li>📊 Dashboard</li>
-                        <li>👥 Usuarios</li>
-                        <li>📝 Contenido</li>
-                        <li>⚙️ Configuración</li>
-                        <li>📈 Analíticas</li>
-                        <li>💬 Mensajes</li>
-                    </ul>
-                </aside>
-                <main class="main-content">
-                    <h3>Contenido Principal</h3>
-                    <p>Este es el área principal de contenido. En pantallas grandes aparece junto al sidebar, pero en
-                        dispositivos móviles el sidebar se coloca debajo para una mejor experiencia de usuario.</p>
-                    <p>El diseño responsivo nos permite reorganizar los elementos de manera inteligente según el espacio
-                        disponible, priorizando siempre la usabilidad y la experiencia del usuario.</p>
-                    <p>Las Media Queries nos dan el control total sobre cómo se ve nuestro sitio en diferentes
-                        dispositivos, desde teléfonos pequeños hasta pantallas de escritorio grandes.</p>
-                </main>
-            </div>
-        </section>
+            <!-- Codigo de Ejemplo -->
+            <section class="demo-section">
+                <h2>Código de Media Queries</h2>
+                <div class="code-block">
+                    <pre>/* Desktop Grande */
+@media screen and (min-width: 1200px) {
+    .grid { grid-template-columns: repeat(4, 1fr); }
+}
 
-        <!-- Galeria de Imágenes -->
-        <section class="demo-section">
-            <h2>Galería Adaptativa</h2>
-            <p>La galería ajusta automáticamente el número de columnas según el espacio disponible</p>
-            <div class="image-gallery">
-                <div class="gallery-item">1</div>
-                <div class="gallery-item">2</div>
-                <div class="gallery-item">3</div>
-                <div class="gallery-item">4</div>
-                <div class="gallery-item">5</div>
-                <div class="gallery-item">6</div>
-                <div class="gallery-item">7</div>
-                <div class="gallery-item">8</div>
-                <div class="gallery-item">9</div>
-            </div>
-        </section>
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        transform: translateY(-100%);
+    }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+}
 
-        <!-- Breakpoints Utilizados -->
-        <section class="demo-section">
-            <h2>Breakpoints Utilizados</h2>
-            <p>Estos son los puntos de quiebre implementados en esta página:</p>
-            <div style="display: grid; gap: 1rem; margin: 2rem 0;">
-                <div
-                    style="background: var(--light-color); padding: 1rem; border-radius: 5px; border-left: 4px solid var(--success-color);">
-                    <strong>Desktop Grande:</strong> 1200px+
-                    <br><span style="font-size: 0.9rem; color: var(--dark-color);">Grid de 4 columnas, sidebar completo,
-                        navegación horizontal</span>
-                </div>
-                <div
-                    style="background: var(--light-color); padding: 1rem; border-radius: 5px; border-left: 4px solid var(--secondary-color);">
-                    <strong>Desktop:</strong> 992px - 1199px
-                    <br><span style="font-size: 0.9rem; color: var(--dark-color);">Grid de 3 columnas, layout
-                        optimizado</span>
-                </div>
-                <div
-                    style="background: var(--light-color); padding: 1rem; border-radius: 5px; border-left: 4px solid var(--warning-color);">
-                    <strong>Tablet:</strong> 768px - 991px
-                    <br><span style="font-size: 0.9rem; color: var(--dark-color);">Grid de 2 columnas, menú hamburguesa,
-                        sidebar reducido</span>
-                </div>
-                <div
-                    style="background: var(--light-color); padding: 1rem; border-radius: 5px; border-left: 4px solid var(--accent-color);">
-                    <strong>Mobile:</strong> hasta 767px
-                    <br><span style="font-size: 0.9rem; color: var(--dark-color);">Grid de 1 columna, sidebar debajo,
-                        navegación vertical</span>
-                </div>
-            </div>
-        </section>
+/* Celular */
+@media screen and (max-width: 768px) {
+    .grid { grid-template-columns: 1fr; }
+    .layout { flex-direction: column; }
+}
 
-        <section class="demo-section">
-            <h2>Mejores Prácticas</h2>
-            <div style="display: grid; gap: 1.5rem; margin: 2rem 0;">
-                <div style="background: var(--white); padding: 1.5rem; border-radius: 10px; border: 1px solid #e0e0e0;">
-                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">📱 Mobile First</h4>
-                    <p>Diseña primero para dispositivos móviles y luego escala hacia arriba.</p>
+/* Orientación */
+@media (orientation: landscape) {
+    .hero { height: 100vh; }
+}</pre>
                 </div>
-                <div style="background: var(--white); padding: 1.5rem; border-radius: 10px; border: 1px solid #e0e0e0;">
-                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🎯 Puntos de Quiebre Lógicos</h4>
-                    <p>Usa breakpoints basados en el contenido, no solo en dispositivos específicos.</p>
-                </div>
-                <div style="background: var(--white); padding: 1.5rem; border-radius: 10px; border: 1px solid #e0e0e0;">
-                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">⚡ Performance</h4>
-                    <p>Evita cargar recursos innecesarios en dispositivos pequeños.</p>
-                </div>
-                <div style="background: var(--white); padding: 1.5rem; border-radius: 10px; border: 1px solid #e0e0e0;">
-                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">🧪 Prueba en Dispositivos Reales
-                    </h4>
-                    <p>Las herramientas de desarrollo son útiles, pero prueba en dispositivos reales.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Características Adicionales -->
-        <section class="demo-section">
-            <h2>Características Implementadas</h2>
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-                <div
-                    style="background: linear-gradient(45deg, #3498db, #2980b9); color: white; padding: 1.5rem; border-radius: 10px;">
-                    <h4>Flexbox & Grid</h4>
-                    <p>Combinación de ambas tecnologías para layouts flexibles y robustos.</p>
-                </div>
-                <div
-                    style="background: linear-gradient(45deg, #e74c3c, #c0392b); color: white; padding: 1.5rem; border-radius: 10px;">
-                    <h4>Unidades Relativas</h4>
-                    <p>Uso de rem, em, %, vw, vh para escalabilidad.</p>
-                </div>
-                <div
-                    style="background: linear-gradient(45deg, #27ae60, #229954); color: white; padding: 1.5rem; border-radius: 10px;">
-                    <h4>Variables CSS</h4>
-                    <p>Paleta de colores consistente mediante custom properties.</p>
-                </div>
-                <div
-                    style="background: linear-gradient(45deg, #f39c12, #d68910); color: white; padding: 1.5rem; border-radius: 10px;">
-                    <h4>Animaciones</h4>
-                    <p>Transiciones suaves que mejoran la experiencia de usuario.</p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
+</div>
 
-    <script src="js/media_queries_script.js"></script>
+<script src="js/media_queries_script.js"></script>
 </body>
 
 </html>

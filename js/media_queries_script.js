@@ -1,94 +1,51 @@
-// Funcionalidad del menu hamburguesa
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            menuToggle.innerHTML = sidebar.classList.contains('active') ? '✕' : '☰';
+        });
 
-// Cerrar menu al hacer clic en un enlace
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 1024) {
+                    sidebar.classList.remove('active');
+                    menuToggle.innerHTML = '☰';
+                }
+            });
+        });
 
-// Funcion para mostrar información sobre el viewport actual
-function mostrarInfoViewport() {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
-    console.log(`Viewport actual: ${width}px × ${height}px`);
-
-    // Determinar el breakpoint actual
-    let breakpoint;
-    if (width >= 1200) breakpoint = 'Desktop Grande';
-    else if (width >= 992) breakpoint = 'Desktop';
-    else if (width >= 768) breakpoint = 'Tablet';
-    else if (width >= 576) breakpoint = 'Mobile Grande';
-    else breakpoint = 'Mobile Pequeño';
-
-    console.log(`Breakpoint actual: ${breakpoint}`);
-}
-
-// Detectar cambios en el tamaño de ventana
-let resizeTimer;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-        mostrarInfoViewport();
-    }, 250);
-});
-
-// Mostrar info inicial
-window.addEventListener('load', mostrarInfoViewport);
-
-// Animacion de entrada para elementos
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+        // Indicador de dispositivo
+        function updateDeviceIndicator() {
+            const indicator = document.getElementById('deviceIndicator');
+            const width = window.innerWidth;
+            
+            let device = '';
+            let emoji = '';
+            let color = '';
+            
+            if (width > 1024) {
+                device = 'Desktop';
+                emoji = '💻';
+                color = 'var(--success-color)';
+            } else if (width > 768) {
+                device = 'Tablet';
+                emoji = '📲';
+                color = 'var(--warning-color)';
+            } else {
+                device = 'Móvil';
+                emoji = '📱';
+                color = 'var(--accent-color)';
+            }
+            
+            indicator.innerHTML = `${emoji} ${device} | ${width}×${window.innerHeight}px`;
+            indicator.style.background = color;
         }
-    });
-}, observerOptions);
 
-// Observar elementos que se animan al entrar
-document.querySelectorAll('.demo-section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
-});
+        updateDeviceIndicator();
 
-// Efecto interactivo en items de galeria
-document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', function () {
-        this.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            this.style.transform = 'scale(1)';
-        }, 150);
-    });
-});
-
-// Informacion de orientacion
-function checkOrientation() {
-    const orientation = window.innerHeight > window.innerWidth ? 'portrait' : 'landscape';
-    console.log(`Orientación: ${orientation}`);
-}
-
-window.addEventListener('orientationchange', () => {
-    setTimeout(checkOrientation, 100);
-});
-
-checkOrientation();
-
-console.log('Página de Media Queries cargada correctamente');
-console.log('Redimensiona la ventana para ver los cambios en el diseño responsivo');
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(updateDeviceIndicator, 100);
+        });
